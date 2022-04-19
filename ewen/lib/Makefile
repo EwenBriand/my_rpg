@@ -12,6 +12,8 @@ SRC	=	my_putchar.c	\
 		my_strcat.c	\
 		my_strlen.c	\
 		my_strlen_int.c	\
+		get_buffer.c	\
+		my_atoi.c	\
 
 ALLGCC	=	my_putchar.o	\
 			my_putnbr.o	\
@@ -20,6 +22,8 @@ ALLGCC	=	my_putchar.o	\
 			my_strcat.o	\
 			my_strlen.o	\
 			my_strlen_int.o	\
+			get_buffer.o	\
+			my_atoi.o	\
 
 NAME	=	libmy.a
 

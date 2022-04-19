@@ -26,12 +26,25 @@ char *my_revstr(char *str);
 int my_putstr(char const *str);
 void my_putnbr(int nb);
 void my_putchar(char c);
+char *get_buffer(char const *file);
+int my_atoi(char *str);
 
-game_t *creat_my_game(sfRenderWindow *window);
-sprite_t *create_sprite(
-    sfRenderWindow *window, char *path, int *p, int *position);
-map_t *create_map(sfRenderWindow *window, char *path, int *pos);
+game_t *creat_my_game(void);
+sprite_t *create_sprite(char *path, int *p, int *position);
+map_t *create_map(char *path, int *pos, char *path_int);
 sfIntRect *create_rect(int top, int left, int width, int height);
-charter_t *create_charter(sfRenderWindow *window, char *path, int *pos);
+charter_t *create_charter(char *path, int *pos);
+
+void my_event(sfRenderWindow *window, game_t *game);
+
+void update_charter(game_t *game);
+void update_map(map_t *map, sfRenderWindow *window, game_t *game);
+
+int give_type(game_t *game);
+void move_static_charter(game_t *game, sfRenderWindow *window);
+void change_charter(game_t *game, int type);
+void move_map(map_t *map, sfRenderWindow *window, game_t *game);
+void move_map_vert(map_t *map, sfRenderWindow *window, game_t *game);
+void move_map_hor(map_t *map, sfRenderWindow *window, game_t *game);
 
 #endif

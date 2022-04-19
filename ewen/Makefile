@@ -5,7 +5,15 @@
 ## my Makefile
 ##
 
-SRC	=	src/init_my_game.c	\
+SRC	=	src/init_all/init_game.c	\
+		src/init_all/init_map.c	\
+		src/init_all/init_charter.c	\
+		src/init_all/init_rect.c	\
+		src/init_all/init_sprite.c	\
+		src/event/event.c	\
+		src/move/move_charter.c		\
+		src/move/move_cam.c		\
+		src/move/update.c		\
 
 OBJ	=	$(SRC:.c=.o)
 
@@ -36,6 +44,7 @@ clean:
 fclean: clean
 	rm $(NAME)
 	rm -rf *.a
+	rm $(OBJ)
 	$(MAKE) -C $(PLACE) fclean
 
 re: fclean makelib all

@@ -74,7 +74,7 @@ typedef struct sprite_s {
     sfSprite *sprite;
     sfTexture *texture;
     sfImage *image;
-    const sfIntRect *rect;
+    sfIntRect *rect;
 } sprite_t;
 
 typedef struct map_s {
@@ -82,7 +82,6 @@ typedef struct map_s {
     int size_x;
     int size_y;
     int *pos;
-    double scale;
     sprite_t *background;
 } map_t;
 
@@ -90,7 +89,6 @@ typedef struct charter_s {
     sprite_t *sprite;
     int *pos;
     int *exep;
-    double scale;
     float rota;
 } charter_t;
 
@@ -101,6 +99,7 @@ typedef struct game_s {
     sfRenderWindow *window;
     int state;
     int input;
+    sfClock *clock;
 } game_t;
 
 #endif
