@@ -21,6 +21,7 @@ static const int END_VALUE = 0;
 static const int NB_OBJECTS = 13;
 static const int INV_SIZE = 20;
 static const int NB_SORTS = 3;
+static const int NB_PNJ = 5;
 
 int my_strlen_int(int nb);
 int my_strlen(char const *str);
@@ -33,14 +34,15 @@ char *get_buffer(char const *file);
 int my_strcmp(char *comp1, char *comp2);
 int my_atoi(char *str);
 
+pnj_t **init_pnjs(void);
 stat_t *empty_stat(void);
 game_t *creat_my_game(void);
 personnage_t *init_perso(void);
 objet_t **init_all_objects(void);
-sprite_t *create_sprite(char *path, int *p, int *position);
-map_t *create_map(char *path, int *pos, char *path_int, int *start);
-sfIntRect *create_rect(int top, int left, int width, int height);
 charter_t *create_charter(char *path, int *pos);
+sprite_t *create_sprite(char *path, int *p, int *position);
+sfIntRect *create_rect(int top, int left, int width, int height);
+map_t *create_map(char *path, int *pos, char *path_int, int *start);
 
 void my_event(sfRenderWindow *window, game_t *game);
 

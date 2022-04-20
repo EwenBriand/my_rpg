@@ -10,16 +10,18 @@ SRC	=	src/init_all/init_game.c	\
 		src/init_all/init_charter.c	\
 		src/init_all/init_rect.c	\
 		src/init_all/init_sprite.c	\
+		src/init_all/init_pnjs.c	\
+		src/init_all/init_perso.c	\
+		src/init_all/init_object.c	\
 		src/event/event.c	\
 		src/move/move_charter.c		\
 		src/move/move_cam.c		\
 		src/move/update.c		\
+		src/interaction/interaction.c	\
 		src/interaction/all_interaction.c	\
-		src/init_all/init_perso.c	\
-		src/init_all/init_object.c	\
 		src/inventaire/add.c	\
 		src/inventaire/del.c	\
-		src/interaction/interaction.c	\
+		src/inventaire/is_in.c	\
 
 OBJ	=	$(SRC:.c=.o)
 

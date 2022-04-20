@@ -55,6 +55,7 @@ typedef struct sort_s {
 } sort_t;
 
 typedef struct pnj_s {
+    int id;
     int finish;
     int avancement;
     char **replique;

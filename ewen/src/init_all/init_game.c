@@ -7,9 +7,8 @@
 
 #include "my.h"
 
-game_t *creat_my_game(void)
+static void creat_map_and_charter(game_t *game)
 {
-    game_t *game = malloc(sizeof(game_t));
     int *pos = malloc(sizeof(int) * 4);
     int *start = malloc(sizeof(int) * 2);
     start[0] = 0;
@@ -22,10 +21,19 @@ game_t *creat_my_game(void)
     pos[2] = 1920 / 100 - 1;
     pos[3] = 1080 / 100 - 1;
     game->charter = create_charter("sprites/charter.png", pos);
+    free(pos);
+    free(start);
+}
+
+game_t *creat_my_game(void)
+{
+    game_t *game = malloc(sizeof(game_t));
+    creat_map_and_charter(game);
     game->state = 0;
     game->clock = sfClock_create();
     game->perso = init_perso();
     game->all_objets = init_all_objects();
+    game->all_pnj = init_pnjs();
     return (game);
 }
 
