@@ -66,6 +66,16 @@ static void move_horizontal(game_t *game, sfEvent event)
     }
 }
 
+static void interaction(game_t *game, sfEvent event)
+{
+    int code;
+    if (event.key.code == sfKeyI) {
+        code = game->map->map[game->charter->pos[0]][game->charter->pos[1]];
+        if (code != 0 && code != 1 && code != 2 && code != 3)
+            make_interaction(game, code);
+    }
+}
+
 void my_event(sfRenderWindow *window, game_t *game)
 {
     sfEvent event;
@@ -76,6 +86,7 @@ void my_event(sfRenderWindow *window, game_t *game)
         if (event.type == sfEvtKeyReleased) {
             move_vertical(game, event);
             move_horizontal(game, event);
+            interaction(game, event);
         }
     }
 }

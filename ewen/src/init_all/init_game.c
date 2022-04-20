@@ -11,15 +11,21 @@ game_t *creat_my_game(void)
 {
     game_t *game = malloc(sizeof(game_t));
     int *pos = malloc(sizeof(int) * 4);
+    int *start = malloc(sizeof(int) * 2);
+    start[0] = 0;
+    start[1] = 0;
     pos[0] = 0;
     pos[1] = 0;
     pos[2] = 1920;
     pos[3] = 1080;
-    game->map = create_map("maps/city1.png", pos, "map_int/city1.int");
+    game->map = create_map("maps/city1.png", pos, "map_int/city1.int", start);
     pos[2] = 1920 / 100 - 1;
     pos[3] = 1080 / 100 - 1;
     game->charter = create_charter("sprites/charter.png", pos);
     game->state = 0;
     game->clock = sfClock_create();
+    game->perso = init_perso();
     return (game);
 }
+
+// 0 18  -2 14

@@ -30,8 +30,9 @@ char *get_buffer(char const *file);
 int my_atoi(char *str);
 
 game_t *creat_my_game(void);
+personnage_t *init_perso(void);
 sprite_t *create_sprite(char *path, int *p, int *position);
-map_t *create_map(char *path, int *pos, char *path_int);
+map_t *create_map(char *path, int *pos, char *path_int, int *start);
 sfIntRect *create_rect(int top, int left, int width, int height);
 charter_t *create_charter(char *path, int *pos);
 
@@ -46,5 +47,7 @@ void change_charter(game_t *game, int type);
 void move_map(map_t *map, sfRenderWindow *window, game_t *game);
 void move_map_vert(map_t *map, sfRenderWindow *window, game_t *game);
 void move_map_hor(map_t *map, sfRenderWindow *window, game_t *game);
+
+void make_interaction(game_t *game, int code);
 
 #endif

@@ -14,6 +14,8 @@ SRC	=	src/init_all/init_game.c	\
 		src/move/move_charter.c		\
 		src/move/move_cam.c		\
 		src/move/update.c		\
+		src/interaction/all_interaction.c	\
+		src/init_all/init_perso.c	\
 
 OBJ	=	$(SRC:.c=.o)
 

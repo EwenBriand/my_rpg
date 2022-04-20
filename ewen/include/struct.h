@@ -97,9 +97,10 @@ typedef struct game_s {
     personnage_t *perso;
     map_t *map;
     sfRenderWindow *window;
+    sfClock *clock;
     int state;
     int input;
-    sfClock *clock;
+    int fight;
 } game_t;
 
 #endif

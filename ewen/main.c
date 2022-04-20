@@ -8,6 +8,20 @@
 #include <stdlib.h>
 #include "my.h"
 
+void make_code_map(game_t *game)
+{
+    int code = game->map->map[game->charter->pos[0]][game->charter->pos[1]];
+
+    if (code == 3 || code == 4 || code == 5 || code == 10)
+        if (game->fight == 3)
+            game->fight = 0;
+        // fight
+        else
+            ++game->fight;
+    else if (code == 2)
+        printf("change map\n");
+}
+
 void my_game(sfRenderWindow *window, game_t *game)
 {
     while (sfRenderWindow_isOpen(window) && game->state != 1) {
@@ -20,7 +34,9 @@ void my_game(sfRenderWindow *window, game_t *game)
         if (game->state == 2) {
             update_charter(game);
             update_map(game->map, window, game);
+            make_code_map(game);
             game->state = 0;
+            printf("%d %d\n", game->perso->druide, game->perso->bucheron);
         }
     }
 }
