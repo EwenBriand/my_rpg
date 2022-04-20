@@ -21,6 +21,9 @@ static pnj_t *init_pnj1(void)
     pnj->replique[1] =
         "Yes je vais pouvoir ... euuh .. faire des trucs.\nVoici ton argent";
     pnj->replique[2] = NULL;
+    pnj->obj = "poudre a canon";
+    pnj->nb_obj = 1;
+    pnj->type = 0;
     return (pnj);
 }
 
@@ -42,9 +45,13 @@ static pnj_t *init_pnj2(void)
         "Merci beaucoup et comme on dis tout travail mérite salaire";
     pnj->replique[4] = "Des bandits se sont introduit chez moi et m'ont "
                        "dérober ma faux. Peux-tu me la retrouver ?";
-    pnj->replique[5] = "Tu l'as retrouver ?\n J'ai pas grand chose mais voila "
-                       "quelque crédits";
+    pnj->replique[5] =
+        "Tu l'as retrouver ?\n J'ai crus comprendre que ton vaisseau avais "
+        "exploser ? je peux t'éberger en attendant si tu veux";
     pnj->replique[6] = NULL;
+    pnj->obj = "baie";
+    pnj->nb_obj = 5;
+    pnj->type = 0;
     return (pnj);
 }
 
@@ -62,6 +69,7 @@ static pnj_t *init_pnj3(void)
     pnj->replique[1] =
         "Tu es bien beau dans ton équipement voila un petit quelque chose";
     pnj->replique[2] = NULL;
+    pnj->type = 3;
     return (pnj);
 }
 
@@ -79,6 +87,9 @@ static pnj_t *init_pnj4(void)
     pnj->replique[1] =
         "Merci beaucoup, j'espere que tu aimes pas beaucoup le banquier...";
     pnj->replique[2] = NULL;
+    pnj->obj = "venin";
+    pnj->nb_obj = 1;
+    pnj->type = 0;
     return (pnj);
 }
 
@@ -96,6 +107,9 @@ static pnj_t *init_pnj5(void)
     pnj->replique[1] =
         "Bon c'est suffisant pour tenir le temps de refaire un mur en Pierre";
     pnj->replique[2] = NULL;
+    pnj->obj = "bois";
+    pnj->nb_obj = 10;
+    pnj->type = 0;
     return (pnj);
 }
 

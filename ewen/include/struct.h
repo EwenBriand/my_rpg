@@ -61,6 +61,9 @@ typedef struct pnj_s {
     char **replique;
     int credits;
     int xp;
+    int type; // 0 = ramener obj; 1 = tuer des bestioles;
+    char *obj;
+    int nb_obj;
 } pnj_t;
 
 typedef struct personnage_s {
