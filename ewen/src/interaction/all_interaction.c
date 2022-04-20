@@ -14,6 +14,7 @@ static void make_buisson(game_t *game)
     int nb_baies = rand() % 6 + 1;
     ++game->perso->druide;
     game->map->map[game->charter->pos[0]][game->charter->pos[1]] = 3;
+    add_object_in_inv(game, "baie", nb_baies);
 }
 
 static void make_arbre(game_t *game)
@@ -22,7 +23,8 @@ static void make_arbre(game_t *game)
     int nb_bois = rand() % 6 + 1;
     ++game->perso->bucheron;
     game->map->map[game->charter->pos[0]][game->charter->pos[1]] = 3;
-    printf("%d\n", nb_bois);
+    add_object_in_inv(game, "bois", nb_bois);
+    // printf("%d\n", nb_bois);
 }
 
 void make_interaction(game_t *game, int code)

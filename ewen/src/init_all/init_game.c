@@ -25,6 +25,7 @@ game_t *creat_my_game(void)
     game->state = 0;
     game->clock = sfClock_create();
     game->perso = init_perso();
+    game->all_objets = init_all_objects();
     return (game);
 }
 

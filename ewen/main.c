@@ -37,6 +37,9 @@ void my_game(sfRenderWindow *window, game_t *game)
             make_code_map(game);
             game->state = 0;
             printf("%d %d\n", game->perso->druide, game->perso->bucheron);
+            for (int i = 0; game->perso->inv->inv[i] != NULL; ++i)
+                printf("%s %d\n", game->perso->inv->inv[i]->name,
+                    game->perso->inv->inv[i]->stack);
         }
     }
 }

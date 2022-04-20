@@ -18,6 +18,9 @@
 
 static const int ERROR_VALUE = 84;
 static const int END_VALUE = 0;
+static const int NB_OBJECTS = 13;
+static const int INV_SIZE = 20;
+static const int NB_SORTS = 3;
 
 int my_strlen_int(int nb);
 int my_strlen(char const *str);
@@ -27,10 +30,13 @@ int my_putstr(char const *str);
 void my_putnbr(int nb);
 void my_putchar(char c);
 char *get_buffer(char const *file);
+int my_strcmp(char *comp1, char *comp2);
 int my_atoi(char *str);
 
+stat_t *empty_stat(void);
 game_t *creat_my_game(void);
 personnage_t *init_perso(void);
+objet_t **init_all_objects(void);
 sprite_t *create_sprite(char *path, int *p, int *position);
 map_t *create_map(char *path, int *pos, char *path_int, int *start);
 sfIntRect *create_rect(int top, int left, int width, int height);
@@ -49,5 +55,10 @@ void move_map_vert(map_t *map, sfRenderWindow *window, game_t *game);
 void move_map_hor(map_t *map, sfRenderWindow *window, game_t *game);
 
 void make_interaction(game_t *game, int code);
+void interaction(game_t *game, sfEvent event);
+
+int is_in_inv(game_t *game, char *name);
+void add_object_in_inv(game_t *game, char *name, int nb);
+void del_object_in_inv(game_t *game, char *name, int nb);
 
 #endif

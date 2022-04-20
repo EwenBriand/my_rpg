@@ -16,6 +16,10 @@ SRC	=	src/init_all/init_game.c	\
 		src/move/update.c		\
 		src/interaction/all_interaction.c	\
 		src/init_all/init_perso.c	\
+		src/init_all/init_object.c	\
+		src/inventaire/add.c	\
+		src/inventaire/del.c	\
+		src/interaction/interaction.c	\
 
 OBJ	=	$(SRC:.c=.o)
 

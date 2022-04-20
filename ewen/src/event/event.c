@@ -15,10 +15,10 @@ static int is_compatible(game_t *game, int y, int x)
 
     if ((pos_act == 3 || pos_act == 4 || pos_act == 5 || pos_act == 10)
         && (pos_new == 1 || pos_new == 6 || pos_new == 7 || pos_new == 8
-            || pos_new == 9 || pos_new == 0))
+            || pos_new == 9 || pos_new == 0 || pos_new == 12))
         return (1);
     else if ((pos_act == 1 || pos_act == 6 || pos_act == 7 || pos_act == 8
-                 || pos_act == 9 || pos_act == 0)
+                 || pos_act == 9 || pos_act == 0 || pos_new == 12)
         && (pos_new == 3 || pos_new == 4 || pos_new == 5 || pos_new == 10
             || pos_new == 2))
         return (1);
@@ -63,16 +63,6 @@ static void move_horizontal(game_t *game, sfEvent event)
         game->charter->rota = 2;
         --game->charter->pos[0];
         game->input = 'z';
-    }
-}
-
-static void interaction(game_t *game, sfEvent event)
-{
-    int code;
-    if (event.key.code == sfKeyI) {
-        code = game->map->map[game->charter->pos[0]][game->charter->pos[1]];
-        if (code != 0 && code != 1 && code != 2 && code != 3)
-            make_interaction(game, code);
     }
 }
 

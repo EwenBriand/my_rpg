@@ -20,13 +20,13 @@ typedef struct stat_s {
     int def_phy;
     int att_ma;
     int def_ma;
-    int pm; // PM = 3
 } stat_t;
 
 typedef struct objet_s {
     char *name;
+    int stack;
     int type; // 0 = equipement on prend en compte stat; 1 = potion (+ 20 PV);
-              // 2 = antidote; 3 = objet de quete
+              // 2 = antidote; 3 = objet de quete; 4 = baie; 5 = bois
     stat_t *stat;
 } objet_t;
 
@@ -51,8 +51,16 @@ typedef struct sort_s {
     int po;
     int dmg;
     char *name;
-    char *desc;
+    char *description;
 } sort_t;
+
+typedef struct pnj_s {
+    int finish;
+    int avancement;
+    char **replique;
+    int credits;
+    int xp;
+} pnj_t;
 
 typedef struct personnage_s {
     int druide;
@@ -93,8 +101,10 @@ typedef struct charter_s {
 } charter_t;
 
 typedef struct game_s {
-    charter_t *charter;
+    pnj_t **all_pnj;
+    objet_t **all_objets;
     personnage_t *perso;
+    charter_t *charter;
     map_t *map;
     sfRenderWindow *window;
     sfClock *clock;
