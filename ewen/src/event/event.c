@@ -77,8 +77,10 @@ void my_event(sfRenderWindow *window, game_t *game)
             move_vertical(game, event);
             move_horizontal(game, event);
             interaction(window, game, event);
-            if (event.key.code == sfKeyF)
-                add_object_in_inv(game, "poudre a canon", 5);
+            if (event.key.code == sfKeyF) {
+                add_object_in_inv(game, "faux", 1);
+                game->all_pnj[1]->nb_obj = 5;
+            }
         }
     }
 }

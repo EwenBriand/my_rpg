@@ -9,11 +9,10 @@
 
 static void while_loop_pnj1(sfRenderWindow *window, game_t *game)
 {
+    sfText_setString(game->pnj_scene->name, game->all_pnj[0]->name);
+    sfText_setString(game->pnj_scene->replique,
+        game->all_pnj[0]->replique[game->all_pnj[0]->avancement]);
     while (game->state == 3) {
-        sfText_setString(game->pnj_scene->name, game->all_pnj[0]->name);
-        sfText_setString(game->pnj_scene->replique,
-            game->all_pnj[0]->replique[game->all_pnj[0]->avancement]);
-
         draw_map(window, game);
         sfRenderWindow_drawSprite(
             window, game->pnj_scene->textbox->sprite, NULL);

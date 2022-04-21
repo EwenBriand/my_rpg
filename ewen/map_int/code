@@ -4,10 +4,10 @@
 3 = mob
 4 = mob + buisson
 5 = mob + arbre
-6 = png1
-7 = png2
-8 = png3
-9 = png4
-10 = png5 + mob
+6 = pnj4
+7 = pnj1
+8 = pnj5
+9 = pnj3
+10 = pnj2 + mob
 11 = passage dans le mur
 12 = shop

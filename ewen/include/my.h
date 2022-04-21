@@ -58,9 +58,13 @@ void move_map(map_t *map, sfRenderWindow *window, game_t *game);
 void move_map_vert(map_t *map, sfRenderWindow *window, game_t *game);
 void move_map_hor(map_t *map, sfRenderWindow *window, game_t *game);
 
+void interaction_pnj1(sfRenderWindow *window, game_t *game);
+void interaction_pnj2(sfRenderWindow *window, game_t *game);
+void interaction_pnj3(sfRenderWindow *window, game_t *game);
+void interaction_pnj4(sfRenderWindow *window, game_t *game);
+void interaction_pnj5(sfRenderWindow *window, game_t *game);
 void make_interaction(sfRenderWindow *window, game_t *game, int code);
 void interaction(sfRenderWindow *window, game_t *game, sfEvent event);
-void interaction_pnj1(sfRenderWindow *window, game_t *game);
 
 int is_in_inv(game_t *game, char *name, int nb);
 void add_object_in_inv(game_t *game, char *name, int nb);

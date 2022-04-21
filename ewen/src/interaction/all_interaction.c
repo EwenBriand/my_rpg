@@ -37,14 +37,14 @@ void make_interaction(sfRenderWindow *window, game_t *game, int code)
         interaction_pnj1(window, game);
     if (code == 10)
         // pnj2
-        printf("%d is a png\n", 2);
+        interaction_pnj2(window, game);
     if (code == 9)
         // pnj3
-        printf("%d is a png\n", 3);
+        interaction_pnj3(window, game);
     if (code == 6)
         // pnj4
-        printf("%d is a png\n", 4);
+        interaction_pnj4(window, game);
     if (code == 8)
         // pnj5
-        printf("%d is a png\n", 5);
+        interaction_pnj5(window, game);
 }

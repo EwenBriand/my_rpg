@@ -32,6 +32,14 @@ static inv_t *creat_inv(void)
 equip_t *creat_equip(void)
 {
     equip_t *equip = malloc(sizeof(equip_t));
+    equip->head = NULL;
+    equip->body = NULL;
+    equip->leg = NULL;
+    equip->gauntlet = NULL;
+    equip->neck = NULL;
+    equip->shoulder = NULL;
+    equip->weapon = NULL;
+    equip->foot = NULL;
     return (equip);
 }
 

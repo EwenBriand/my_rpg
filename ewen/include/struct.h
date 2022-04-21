@@ -43,7 +43,7 @@ typedef struct equip_s {
     objet_t *weapon;
     objet_t *gauntlet;
     objet_t *neck;
-    objet_t *soulder;
+    objet_t *shoulder;
     objet_t *foot;
 } equip_t;
 
@@ -62,7 +62,7 @@ typedef struct pnj_s {
     char **replique;
     int credits;
     int xp;
-    int type; // 0 = ramener obj; 1 = tuer des bestioles; 3 = autre
+    int type; // 0 = ramener obj; 1 = tuer des bestioles; 2 = autre
     char *obj;
     int nb_obj;
 } pnj_t;

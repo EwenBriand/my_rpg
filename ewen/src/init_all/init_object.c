@@ -60,7 +60,8 @@ objet_t **init_all_objects(void)
     objects[2] = creat_object("poudre a canon", 3, NULL);
     objects[12] = creat_object("baie", 4, NULL);
     objects[13] = creat_object("bois", 5, NULL);
-    objects[14] = NULL;
+    objects[14] = creat_object("faux", 3, NULL);
+    objects[15] = NULL;
 
     return (objects);
 }

@@ -22,6 +22,10 @@ SRC	=	src/init_all/init_game.c	\
 		src/interaction/interaction.c	\
 		src/interaction/all_interaction.c	\
 		src/interaction/pnj1.c	\
+		src/interaction/pnj2.c	\
+		src/interaction/pnj3.c	\
+		src/interaction/pnj4.c	\
+		src/interaction/pnj5.c	\
 		src/inventaire/add.c	\
 		src/inventaire/del.c	\
 		src/inventaire/is_in.c	\
