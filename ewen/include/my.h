@@ -46,6 +46,7 @@ sfIntRect *create_rect(int top, int left, int width, int height);
 map_t *create_map(char *path, int *pos, char *path_int);
 
 void my_event(sfRenderWindow *window, game_t *game);
+void event_pnj_scene(sfRenderWindow *window, game_t *game);
 
 void update_charter(game_t *game);
 void update_map(map_t *map, sfRenderWindow *window, game_t *game);

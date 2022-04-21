@@ -15,6 +15,7 @@ SRC	=	src/init_all/init_game.c	\
 		src/init_all/init_object.c	\
 		src/init_all/init_pnj_scene.c	\
 		src/event/event.c	\
+		src/event/event_pnj.c	\
 		src/move/move_charter.c		\
 		src/move/move_cam.c		\
 		src/move/update.c		\
