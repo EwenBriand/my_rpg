@@ -55,13 +55,14 @@ typedef struct sort_s {
 } sort_t;
 
 typedef struct pnj_s {
+    char *name;
     int id;
     int finish;
     int avancement;
     char **replique;
     int credits;
     int xp;
-    int type; // 0 = ramener obj; 1 = tuer des bestioles;
+    int type; // 0 = ramener obj; 1 = tuer des bestioles; 3 = autre
     char *obj;
     int nb_obj;
 } pnj_t;

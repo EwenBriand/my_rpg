@@ -10,16 +10,17 @@
 static pnj_t *init_pnj1(void)
 {
     pnj_t *pnj = malloc(sizeof(pnj_t));
+    pnj->name = "Tuco";
     pnj->id = 1;
     pnj->finish = 2;
     pnj->avancement = 1;
-    pnj->credits = 150;
-    pnj->xp = 10;
+    pnj->credits = 10;
+    pnj->xp = 30;
     pnj->replique = malloc(sizeof(char *) * 3);
     pnj->replique[0] = "Eh toi, si tu me trouve de la poudre à canon, je suis "
                        "prêt à te l'acheter à bon prix...";
     pnj->replique[1] =
-        "Yes je vais pouvoir ... euuh .. faire des trucs.\nVoici ton argent";
+        "Yes je vais pouvoir... euuh... arreter de creuser.\nVoici ton argent";
     pnj->replique[2] = NULL;
     pnj->obj = "poudre a canon";
     pnj->nb_obj = 1;
@@ -30,6 +31,7 @@ static pnj_t *init_pnj1(void)
 static pnj_t *init_pnj2(void)
 {
     pnj_t *pnj = malloc(sizeof(pnj_t));
+    pnj->name = "Bob";
     pnj->id = 2;
     pnj->finish = 6;
     pnj->avancement = 0;
@@ -58,6 +60,7 @@ static pnj_t *init_pnj2(void)
 static pnj_t *init_pnj3(void)
 {
     pnj_t *pnj = malloc(sizeof(pnj_t));
+    pnj->name = "James";
     pnj->id = 3;
     pnj->finish = 2;
     pnj->avancement = 0;
@@ -65,10 +68,10 @@ static pnj_t *init_pnj3(void)
     pnj->xp = 0;
     pnj->replique = malloc(sizeof(char *) * 3);
     pnj->replique[0] = "Dans les jeux vidéos comme dans l'Oasis, un "
-                       "aventurier se doit d'être bien équipé. ";
-    pnj->replique[1] =
-        "Tu es bien beau dans ton équipement voila un petit quelque chose";
+                       "aventurier se doit d'être bien équipé.";
+    pnj->replique[1] = "On dirais le début d'une aventure digne de Gary";
     pnj->replique[2] = NULL;
+    printf("%s\n", pnj->replique[0]);
     pnj->type = 3;
     return (pnj);
 }
@@ -76,6 +79,7 @@ static pnj_t *init_pnj3(void)
 static pnj_t *init_pnj4(void)
 {
     pnj_t *pnj = malloc(sizeof(pnj_t));
+    pnj->name = "Jack";
     pnj->id = 4;
     pnj->finish = 2;
     pnj->avancement = 0;
@@ -96,6 +100,7 @@ static pnj_t *init_pnj4(void)
 static pnj_t *init_pnj5(void)
 {
     pnj_t *pnj = malloc(sizeof(pnj_t));
+    pnj->name = "Ponzi";
     pnj->id = 5;
     pnj->finish = 2;
     pnj->avancement = 0;

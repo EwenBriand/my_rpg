@@ -33,6 +33,20 @@ void make_interaction(game_t *game, int code)
         make_buisson(game);
     if (code == 5)
         make_arbre(game);
-    if (code > 5 && code < 11)
-        printf("%d is a png\n", code - 5);
+    if (code == 10)
+        // pnj2
+        printf("%d is a png\n", 2);
+    if (code == 7)
+        // pnj1
+        printf("%d is a png\n", 1);
+
+    if (code == 9)
+        // pnj3
+        printf("%d is a png\n", 3);
+    if (code == 6)
+        // pnj4
+        printf("%d is a png\n", 4);
+    if (code == 8)
+        // pnj5
+        printf("%d is a png\n", 5);
 }
