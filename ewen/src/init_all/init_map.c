@@ -9,7 +9,7 @@
 
 int **creat_int_array_from_file(char *path)
 {
-    int **array = malloc(sizeof(int *) * 12);
+    int **array = malloc(sizeof(int *) * 13);
     char *buffer = get_buffer(path);
     int pos[3] = {0, 0, 0};
     char *temp = malloc(sizeof(char) * 5);
@@ -38,14 +38,14 @@ int **creat_int_array_from_file(char *path)
     return (array);
 }
 
-map_t *create_map(char *path, int *pos, char *path_int, int *start)
+map_t *create_map(char *path, int *pos, char *path_int)
 {
     map_t *map = malloc(sizeof(map_t));
 
     map->map = creat_int_array_from_file(path_int);
     map->pos = malloc(sizeof(int) * 2);
-    map->pos[0] = start[1];
-    map->pos[1] = start[2];
+    map->pos[0] = 0;
+    map->pos[1] = 0;
     map->background = create_sprite(path, pos, pos);
     map->size_x = 14;
     map->size_y = 8;

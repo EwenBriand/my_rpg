@@ -13,14 +13,14 @@ static pnj_t *init_pnj1(void)
     pnj->name = "Tuco";
     pnj->id = 1;
     pnj->finish = 2;
-    pnj->avancement = 1;
+    pnj->avancement = 0;
     pnj->credits = 10;
     pnj->xp = 30;
     pnj->replique = malloc(sizeof(char *) * 3);
-    pnj->replique[0] = "Eh toi, si tu me trouve de la poudre à canon, je suis "
-                       "prêt à te l'acheter à bon prix...";
-    pnj->replique[1] =
-        "Yes je vais pouvoir... euuh... arreter de creuser.\nVoici ton argent";
+    pnj->replique[0] = "Eh toi, si tu me trouve de la poudre a canon\nje suis "
+                       "pret a te l'acheter a bon prix...";
+    pnj->replique[1] = "ENFIN je vais pouvoir... euuh...\narreter de creuser. "
+                       "Voici ton argent";
     pnj->replique[2] = NULL;
     pnj->obj = "poudre a canon";
     pnj->nb_obj = 1;
@@ -71,7 +71,6 @@ static pnj_t *init_pnj3(void)
                        "aventurier se doit d'être bien équipé.";
     pnj->replique[1] = "On dirais le début d'une aventure digne de Gary";
     pnj->replique[2] = NULL;
-    printf("%s\n", pnj->replique[0]);
     pnj->type = 3;
     return (pnj);
 }

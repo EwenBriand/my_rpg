@@ -41,10 +41,7 @@ static void move_charter(
             if (type == 8)
                 type = 0;
         }
-
-        sfRenderWindow_clear(window, sfBlack);
-        sfRenderWindow_drawSprite(window, game->map->background->sprite, NULL);
-        sfRenderWindow_drawSprite(window, game->charter->sprite->sprite, NULL);
+        draw_map(window, game);
         sfRenderWindow_display(window);
     }
 }

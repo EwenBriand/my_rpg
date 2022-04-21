@@ -24,22 +24,20 @@ static void make_arbre(game_t *game)
     ++game->perso->bucheron;
     game->map->map[game->charter->pos[0]][game->charter->pos[1]] = 3;
     add_object_in_inv(game, "bois", nb_bois);
-    // printf("%d\n", nb_bois);
 }
 
-void make_interaction(game_t *game, int code)
+void make_interaction(sfRenderWindow *window, game_t *game, int code)
 {
     if (code == 4)
         make_buisson(game);
     if (code == 5)
         make_arbre(game);
+    if (code == 7)
+        // pnj1
+        interaction_pnj1(window, game);
     if (code == 10)
         // pnj2
         printf("%d is a png\n", 2);
-    if (code == 7)
-        // pnj1
-        printf("%d is a png\n", 1);
-
     if (code == 9)
         // pnj3
         printf("%d is a png\n", 3);

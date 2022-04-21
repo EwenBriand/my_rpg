@@ -25,9 +25,7 @@ void make_code_map(game_t *game)
 void my_game(sfRenderWindow *window, game_t *game)
 {
     while (sfRenderWindow_isOpen(window) && game->state != 1) {
-        sfRenderWindow_clear(window, sfBlack);
-        sfRenderWindow_drawSprite(window, game->map->background->sprite, NULL);
-        sfRenderWindow_drawSprite(window, game->charter->sprite->sprite, NULL);
+        draw_map(window, game);
         sfRenderWindow_display(window);
         if (game->state != 2)
             my_event(window, game);

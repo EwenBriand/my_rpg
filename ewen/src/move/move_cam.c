@@ -131,10 +131,7 @@ void move_map(map_t *map, sfRenderWindow *window, game_t *game)
             if (type == 8)
                 type = 0;
         }
-
-        sfRenderWindow_clear(window, sfBlack);
-        sfRenderWindow_drawSprite(window, game->map->background->sprite, NULL);
-        sfRenderWindow_drawSprite(window, game->charter->sprite->sprite, NULL);
+        draw_map(window, game);
         sfRenderWindow_display(window);
     }
 }
@@ -175,10 +172,7 @@ void move_map_vert(map_t *map, sfRenderWindow *window, game_t *game)
             if (type == 8)
                 type = 0;
         }
-
-        sfRenderWindow_clear(window, sfBlack);
-        sfRenderWindow_drawSprite(window, game->map->background->sprite, NULL);
-        sfRenderWindow_drawSprite(window, game->charter->sprite->sprite, NULL);
+        draw_map(window, game);
         sfRenderWindow_display(window);
     }
 }
@@ -218,10 +212,7 @@ void move_map_hor(map_t *map, sfRenderWindow *window, game_t *game)
             if (type == 8)
                 type = 0;
         }
-
-        sfRenderWindow_clear(window, sfBlack);
-        sfRenderWindow_drawSprite(window, game->map->background->sprite, NULL);
-        sfRenderWindow_drawSprite(window, game->charter->sprite->sprite, NULL);
+        draw_map(window, game);
         sfRenderWindow_display(window);
     }
 }

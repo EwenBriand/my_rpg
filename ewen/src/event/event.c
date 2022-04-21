@@ -76,7 +76,9 @@ void my_event(sfRenderWindow *window, game_t *game)
         if (event.type == sfEvtKeyReleased) {
             move_vertical(game, event);
             move_horizontal(game, event);
-            interaction(game, event);
+            interaction(window, game, event);
+            if (event.key.code == sfKeyF)
+                add_object_in_inv(game, "poudre a canon", 5);
         }
     }
 }

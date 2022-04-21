@@ -57,7 +57,7 @@ objet_t **init_all_objects(void)
     creat_equip(objects);
     objects[0] = creat_object("potion", 1, NULL);
     objects[1] = creat_object("antidote", 2, NULL);
-    objects[2] = creat_object("objet de quete", 3, NULL);
+    objects[2] = creat_object("poudre a canon", 3, NULL);
     objects[12] = creat_object("baie", 4, NULL);
     objects[13] = creat_object("bois", 5, NULL);
     objects[14] = NULL;

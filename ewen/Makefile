@@ -13,15 +13,18 @@ SRC	=	src/init_all/init_game.c	\
 		src/init_all/init_pnjs.c	\
 		src/init_all/init_perso.c	\
 		src/init_all/init_object.c	\
+		src/init_all/init_pnj_scene.c	\
 		src/event/event.c	\
 		src/move/move_charter.c		\
 		src/move/move_cam.c		\
 		src/move/update.c		\
 		src/interaction/interaction.c	\
 		src/interaction/all_interaction.c	\
+		src/interaction/pnj1.c	\
 		src/inventaire/add.c	\
 		src/inventaire/del.c	\
 		src/inventaire/is_in.c	\
+		src/draw/draw_map.c	\
 
 OBJ	=	$(SRC:.c=.o)
 

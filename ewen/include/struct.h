@@ -105,8 +105,15 @@ typedef struct charter_s {
     float rota;
 } charter_t;
 
+typedef struct pnj_scene_s {
+    sprite_t *textbox;
+    sfText *name;
+    sfText *replique;
+    sfFont *font;
+} pnj_scene_t;
 typedef struct game_s {
     pnj_t **all_pnj;
+    pnj_scene_t *pnj_scene;
     objet_t **all_objets;
     personnage_t *perso;
     charter_t *charter;
