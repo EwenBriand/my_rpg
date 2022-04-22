@@ -32,6 +32,10 @@ game_t *creat_my_game(void)
     game->all_objets = init_all_objects();
     game->all_pnj = init_pnjs();
     game->pnj_scene = init_pnj_scene();
+    game->level_up_sound = sfMusic_createFromFile("music/level_up.ogg");
+    game->fireworks = sfMusic_createFromFile("music/fireworks.ogg");
+    game->quest_complete_sound = sfMusic_createFromFile("music/quest.ogg");
+    game->particule_array = init_all_array();
     return (game);
 }
 

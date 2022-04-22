@@ -10,8 +10,10 @@
 
 #include <SFML/Audio.h>
 #include <SFML/Graphics.h>
+#include <SFML/Graphics/Vertex.h>
 #include <SFML/System.h>
 #include <SFML/Window.h>
+#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include "struct.h"
@@ -34,12 +36,14 @@ char *get_buffer(char const *file);
 int my_strcmp(char *comp1, char *comp2);
 int my_atoi(char *str);
 
+pnj_t *init_pnj2(void);
 pnj_t **init_pnjs(void);
 stat_t *empty_stat(void);
 game_t *creat_my_game(void);
 personnage_t *init_perso(void);
 objet_t **init_all_objects(void);
 pnj_scene_t *init_pnj_scene(void);
+sfVertexArray **init_all_array(void);
 charter_t *create_charter(char *path, int *pos);
 sprite_t *create_sprite(char *path, int *p, int *position);
 sfIntRect *create_rect(int top, int left, int width, int height);
@@ -50,6 +54,8 @@ void event_pnj_scene(sfRenderWindow *window, game_t *game);
 
 void update_charter(game_t *game);
 void update_map(map_t *map, sfRenderWindow *window, game_t *game);
+
+void level_up(sfRenderWindow *window, game_t *game);
 
 int give_type(game_t *game);
 void move_static_charter(game_t *game, sfRenderWindow *window);

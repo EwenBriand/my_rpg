@@ -35,6 +35,8 @@ void interaction_pnj4(sfRenderWindow *window, game_t *game)
         ++game->all_pnj[3]->avancement;
         game->perso->credits += game->all_pnj[3]->credits;
         game->perso->xp += game->all_pnj[3]->xp;
+        sfMusic_play(game->quest_complete_sound);
     }
     while_loop_pnj4(window, game);
+    sfMusic_stop(game->quest_complete_sound);
 }

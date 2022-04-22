@@ -120,6 +120,10 @@ typedef struct game_s {
     map_t *map;
     sfRenderWindow *window;
     sfClock *clock;
+    sfMusic *level_up_sound;
+    sfMusic *quest_complete_sound;
+    sfMusic *fireworks;
+    sfVertexArray **particule_array;
     int state;
     int input;
     int fight;

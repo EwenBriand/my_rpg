@@ -11,9 +11,11 @@ SRC	=	src/init_all/init_game.c	\
 		src/init_all/init_rect.c	\
 		src/init_all/init_sprite.c	\
 		src/init_all/init_pnjs.c	\
+		src/init_all/init_pnj2.c	\
 		src/init_all/init_perso.c	\
 		src/init_all/init_object.c	\
 		src/init_all/init_pnj_scene.c	\
+		src/init_all/init_all_particule.c \
 		src/event/event.c	\
 		src/event/event_pnj.c	\
 		src/move/move_charter.c		\
@@ -30,6 +32,7 @@ SRC	=	src/init_all/init_game.c	\
 		src/inventaire/del.c	\
 		src/inventaire/is_in.c	\
 		src/draw/draw_map.c	\
+		src/level_up.c	\
 
 OBJ	=	$(SRC:.c=.o)
 
@@ -41,7 +44,7 @@ LDFLAGS	=	-L lib/ -lmy
 
 CPPFLAGS	=	-I ./include
 
-CFLAGS	=	-lcsfml-graphics -lcsfml-system -lcsfml-audio -lcsfml-window
+CFLAGS	=	-lcsfml-graphics -lcsfml-system -lcsfml-audio -lcsfml-window -lm
 
 NAME	=	my_rpg
 

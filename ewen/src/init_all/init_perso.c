@@ -71,7 +71,7 @@ personnage_t *init_perso(void)
     perso->bucheron = 0;
     perso->xp = 0;
     perso->level = 1;
-    perso->xp_supp = 100;
+    perso->xp_supp = 10;
     perso->credits = 1000;
     perso->stat = creat_stat();
     perso->inv = creat_inv();

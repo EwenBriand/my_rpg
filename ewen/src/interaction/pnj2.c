@@ -32,11 +32,13 @@ static void sec_quest(sfRenderWindow *window, game_t *game)
         game->all_pnj[1]->nb_obj = 1;
         game->all_pnj[1]->obj = "faux";
         game->all_pnj[1]->type = 0;
+        sfMusic_play(game->quest_complete_sound);
     }
     if (game->all_pnj[1]->avancement == 3) {
         while_loop_pnj2(window, game);
         ++game->all_pnj[1]->avancement;
         game->state = 3;
+        sfMusic_stop(game->quest_complete_sound);
     }
 }
 
@@ -52,11 +54,13 @@ static void first_quest(sfRenderWindow *window, game_t *game)
         game->perso->xp += game->all_pnj[1]->xp;
         game->all_pnj[1]->nb_obj = 0;
         game->all_pnj[1]->type = 1;
+        sfMusic_play(game->quest_complete_sound);
     }
     if (game->all_pnj[1]->avancement == 1) {
         while_loop_pnj2(window, game);
         ++game->all_pnj[1]->avancement;
         game->state = 3;
+        sfMusic_stop(game->quest_complete_sound);
     }
 }
 void interaction_pnj2(sfRenderWindow *window, game_t *game)
@@ -73,7 +77,9 @@ void interaction_pnj2(sfRenderWindow *window, game_t *game)
         ++game->all_pnj[1]->avancement;
         game->perso->credits += game->all_pnj[1]->credits;
         game->perso->xp += game->all_pnj[1]->xp;
+        sfMusic_play(game->quest_complete_sound);
     }
 
     while_loop_pnj2(window, game);
+    sfMusic_stop(game->quest_complete_sound);
 }
