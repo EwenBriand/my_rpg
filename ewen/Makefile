@@ -36,6 +36,13 @@ SRC	=	src/init_all/init_game.c	\
 		src/change_map/change_map.c	\
 		src/destructor/destroy_sprite.c	\
 		src/destructor/destroy_map.c	\
+		src/destructor/destroy_pnj.c	\
+		src/destructor/destroy_pnj_scene.c	\
+		src/destructor/destroy_perso.c	\
+		src/destructor/destroy_objet.c	\
+		src/destructor/destroy_particule.c	\
+		src/destructor/destroy_game.c	\
+		src/destructor/destroy_charter.c	\
 
 OBJ	=	$(SRC:.c=.o)
 

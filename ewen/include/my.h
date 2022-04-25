@@ -82,6 +82,13 @@ void draw_map(sfRenderWindow *window, game_t *game);
 void change_map(sfRenderWindow *window, game_t *game, int code);
 
 void destroy_map(map_t *map);
+void destroy_pnj(pnj_t **pnj);
+void destroy_game(game_t *game);
+void destroy_objet(objet_t **objet);
 void destroy_sprite(sprite_t *sprite);
+void destroy_perso(personnage_t *perso);
+void destroy_charter(charter_t *charter);
+void destroy_pnj_scene(pnj_scene_t *pnj_scene);
+void destroy_particule(sfVertexArray **particule);
 
 #endif

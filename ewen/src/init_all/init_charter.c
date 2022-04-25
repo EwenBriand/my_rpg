@@ -25,5 +25,6 @@ charter_t *create_charter(char *path, int *pos)
     charter->sprite = create_sprite(path, pos, ok);
 
     sfSprite_setScale(charter->sprite->sprite, (sfVector2f){2, 2});
+    free(ok);
     return (charter);
 }

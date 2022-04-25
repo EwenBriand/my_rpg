@@ -20,7 +20,6 @@ void make_code_map(sfRenderWindow *window, game_t *game)
             ++game->fight;
     if (code == 2 || code == 14)
         change_map(window, game, code);
-    // printf("OK  %d\n", game->fight);
 }
 
 void my_game(sfRenderWindow *window, game_t *game)
@@ -47,9 +46,6 @@ void my_game(sfRenderWindow *window, game_t *game)
     sfMusic_stop(game->level_up_sound);
     sfMusic_stop(game->fireworks);
     sfMusic_stop(game->quest_complete_sound);
-    sfMusic_destroy(game->level_up_sound);
-    sfMusic_destroy(game->fireworks);
-    sfMusic_destroy(game->quest_complete_sound);
 }
 
 int main(int argc, char **argv, char **env)
@@ -65,6 +61,7 @@ int main(int argc, char **argv, char **env)
     sfRenderWindow_setFramerateLimit(window, 200);
     sfRenderWindow_clear(window, sfBlack);
     my_game(window, game);
+    destroy_game(game);
     sfRenderWindow_destroy(window);
     return END_VALUE;
 }
