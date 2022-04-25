@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include "my.h"
 
-void make_code_map(game_t *game)
+void make_code_map(sfRenderWindow *window, game_t *game)
 {
     int code = game->map->map[game->charter->pos[0]][game->charter->pos[1]];
 
@@ -18,8 +18,9 @@ void make_code_map(game_t *game)
         // fight
         else
             ++game->fight;
-    else if (code == 2)
-        printf("change map\n");
+    if (code == 2 || code == 14)
+        change_map(window, game, code);
+    // printf("OK  %d\n", game->fight);
 }
 
 void my_game(sfRenderWindow *window, game_t *game)
@@ -32,11 +33,11 @@ void my_game(sfRenderWindow *window, game_t *game)
         else {
             update_charter(game);
             update_map(game->map, window, game);
-            make_code_map(game);
+            make_code_map(window, game);
             game->state = 0;
 
-            printf("%d %d\nok %d %d\n", game->perso->druide,
-                game->perso->bucheron, game->perso->xp, game->perso->xp_supp);
+            printf("%d %d\nok %d %d\n", game->charter->pos[0],
+                game->charter->pos[1], game->perso->xp, game->perso->xp_supp);
             for (int i = 0; game->perso->inv->inv[i] != NULL; ++i)
                 printf("%s %d\n", game->perso->inv->inv[i]->name,
                     game->perso->inv->inv[i]->stack);

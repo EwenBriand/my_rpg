@@ -58,6 +58,7 @@ void update_map(map_t *map, sfRenderWindow *window, game_t *game);
 void level_up(sfRenderWindow *window, game_t *game);
 
 int give_type(game_t *game);
+void move_charter(sfRenderWindow *window, game_t *game, float x, float y);
 void move_static_charter(game_t *game, sfRenderWindow *window);
 void change_charter(game_t *game, int type);
 void move_map(map_t *map, sfRenderWindow *window, game_t *game);
@@ -77,5 +78,10 @@ void add_object_in_inv(game_t *game, char *name, int nb);
 void del_object_in_inv(game_t *game, char *name, int nb);
 
 void draw_map(sfRenderWindow *window, game_t *game);
+
+void change_map(sfRenderWindow *window, game_t *game, int code);
+
+void destroy_map(map_t *map);
+void destroy_sprite(sprite_t *sprite);
 
 #endif

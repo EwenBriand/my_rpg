@@ -7,8 +7,7 @@
 
 #include "my.h"
 
-static void move_charter(
-    sfRenderWindow *window, game_t *game, float x, float y)
+void move_charter(sfRenderWindow *window, game_t *game, float x, float y)
 {
     sfVector2f pos = sfSprite_getPosition(game->charter->sprite->sprite);
     int time = 0;

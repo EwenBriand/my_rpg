@@ -13,14 +13,15 @@ static int is_compatible(game_t *game, int y, int x)
     int pos_new =
         game->map->map[game->charter->pos[0] + y][game->charter->pos[1] + x];
 
-    if ((pos_act == 3 || pos_act == 4 || pos_act == 5 || pos_act == 10)
+    if ((pos_act == 3 || pos_act == 4 || pos_act == 5 || pos_act == 10
+            || pos_act == 13 || pos_act == 14 || pos_act == 2)
         && (pos_new == 1 || pos_new == 6 || pos_new == 7 || pos_new == 8
-            || pos_new == 9 || pos_new == 0 || pos_new == 12))
+            || pos_new == 9 || pos_new == 0 || pos_new == 12 || pos_new == 1))
         return (1);
     else if ((pos_act == 1 || pos_act == 6 || pos_act == 7 || pos_act == 8
                  || pos_act == 9 || pos_act == 0 || pos_new == 12)
         && (pos_new == 3 || pos_new == 4 || pos_new == 5 || pos_new == 10
-            || pos_new == 2))
+            || pos_new == 2 || pos_new == 13 || pos_new == 14 || pos_new == 2))
         return (1);
     return (0);
 }

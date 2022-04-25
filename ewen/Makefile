@@ -33,6 +33,9 @@ SRC	=	src/init_all/init_game.c	\
 		src/inventaire/is_in.c	\
 		src/draw/draw_map.c	\
 		src/level_up.c	\
+		src/change_map/change_map.c	\
+		src/destructor/destroy_sprite.c	\
+		src/destructor/destroy_map.c	\
 
 OBJ	=	$(SRC:.c=.o)
 
