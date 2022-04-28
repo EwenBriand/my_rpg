@@ -44,6 +44,14 @@ static void my_big_effect(sfRenderWindow *window, game_t *game)
         }
         draw_particule(window, game);
     }
+    for (int i = 0; i < 360; ++i) {
+        sfVertexArray_getVertex(game->particule_array[0], i)->position =
+            (sfVector2f){1920 / 2 + 0, 1080 / 2 + 0};
+        sfVertexArray_getVertex(game->particule_array[1], i)->position =
+            (sfVector2f){1920 / 2 + 100, 1080 / 2 - 100};
+        sfVertexArray_getVertex(game->particule_array[2], i)->position =
+            (sfVector2f){1920 / 2 - 100, 1080 / 2 - 100};
+    }
 }
 
 static void leveling_up(game_t *game)
