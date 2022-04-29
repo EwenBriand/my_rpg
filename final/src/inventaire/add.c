@@ -39,7 +39,8 @@ void add_object_in_inv(game_t *game, char *name, int nb)
         return;
     for (int i = 0; i < nb; i++) {
         if (objet->type == 0) {
-            ++objet->stack;
+            if (objet->stack != 1)
+                ++objet->stack;
             game->perso->inv->inv[game->perso->inv->nb_obj] = objet;
             ++game->perso->inv->nb_obj;
             game->perso->inv->inv[game->perso->inv->nb_obj] = NULL;

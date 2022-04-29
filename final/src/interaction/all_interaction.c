@@ -5,9 +5,9 @@
 ** all_interaction
 */
 
+#include <stdlib.h>
 #include <time.h>
 #include "../../include/my.h"
-#include <stdlib.h>
 
 static void make_buisson(game_t *game)
 {
@@ -29,6 +29,10 @@ static void make_arbre(game_t *game)
 
 void make_interaction(sfRenderWindow *window, game_t *game, int code)
 {
+    if (code == 12) {
+        sfClock_restart(game->shop.clock1.clock);
+        game->state = 666;
+    }
     if (code == 4)
         make_buisson(game);
     if (code == 5)

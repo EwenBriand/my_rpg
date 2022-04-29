@@ -5,10 +5,10 @@
 ** main
 */
 
-#include "include/my.h"
-#include "SFML/Graphics.h"
-#include "stdio.h"
 #include "SFML/Audio.h"
+#include "SFML/Graphics.h"
+#include "include/my.h"
+#include "stdio.h"
 
 void make_code_map(sfRenderWindow *window, game_t *game)
 {
@@ -17,7 +17,7 @@ void make_code_map(sfRenderWindow *window, game_t *game)
     if (code == 3 || code == 4 || code == 5 || code == 10)
         if (game->fight == 3)
             game->fight = 0;
-    // fight
+        // fight
         else
             ++game->fight;
     if (code == 2 || code == 14)
@@ -30,7 +30,7 @@ void my_game(sfRenderWindow *window, game_t *game)
         if (game->state == 0)
             draw_map(window, game);
         sfRenderWindow_display(window);
-       if (game->state == 666) {
+        if (game->state == 666) {
             open_shop(window, game);
         } else if (game->state != 2)
             my_event(window, game);
@@ -45,6 +45,7 @@ void my_game(sfRenderWindow *window, game_t *game)
             for (int i = 0; game->perso->inv->inv[i] != NULL; ++i)
                 printf("%s %d\n", game->perso->inv->inv[i]->name,
                     game->perso->inv->inv[i]->stack);
+            printf("credits: %i\n", game->perso->credits);
         }
         level_up(window, game);
     }

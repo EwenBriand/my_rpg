@@ -5,8 +5,8 @@
 ** event
 */
 
-#include "SFML/Graphics.h"
 #include "../../include/my.h"
+#include "SFML/Graphics.h"
 
 static int is_compatible(game_t *game, int y, int x)
 {
@@ -16,8 +16,8 @@ static int is_compatible(game_t *game, int y, int x)
 
     if ((pos_act == 3 || pos_act == 4 || pos_act == 5 || pos_act == 10
             || pos_act == 13 || pos_act == 14 || pos_act == 2)
-        && (pos_new == 6 || pos_new == 7 || pos_new == 8
-            || pos_new == 9 || pos_new == 0 || pos_new == 12 || pos_new == 1))
+        && (pos_new == 6 || pos_new == 7 || pos_new == 8 || pos_new == 9
+            || pos_new == 0 || pos_new == 12 || pos_new == 1))
         return (1);
     else if ((pos_act == 1 || pos_act == 6 || pos_act == 7 || pos_act == 8
                  || pos_act == 9 || pos_act == 0 || pos_new == 12)
@@ -75,10 +75,6 @@ void my_event(sfRenderWindow *window, game_t *game)
     while (sfRenderWindow_pollEvent(window, &event)) {
         if (event.type == sfEvtClosed || sfKeyboard_isKeyPressed(sfKeyEscape))
             game->state = 1;
-        if (sfKeyboard_isKeyPressed(sfKeyE)) {
-            game->state = 666;
-            sfClock_restart(game->shop.clock1.clock);
-        }
         if (event.type == sfEvtKeyReleased) {
             move_vertical(game, event);
             move_horizontal(game, event);

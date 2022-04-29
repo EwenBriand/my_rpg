@@ -96,7 +96,9 @@ void open_shop(sfRenderWindow *window, game_t *game);
 void create_sprite_coins(shop_t *shop);
 void make_shop(shop_t *shop);
 void create_sprite_text(shop_t *shop);
-void display_button(sfRenderWindow *window, sfVector2i mouse, shop_t *shop, int *credits);
-void display_color(sfRenderWindow *window, shop_t *shop, sprite_t color, int i);
+void display_button(
+    sfRenderWindow *window, sfVector2i mouse, shop_t *shop, game_t *game);
+void display_color(
+    sfRenderWindow *window, shop_t *shop, sprite_t color, int i);
 
 #endif
