@@ -10,8 +10,8 @@
 
 #include <SFML/Audio.h>
 #include <SFML/Graphics.h>
-#include <SFML/System.h>
-#include <SFML/Window.h>
+//#include <SFML/System.h>
+//#include <SFML/Window.h>
 
 typedef struct stat_s {
     int pv;
@@ -85,8 +85,8 @@ typedef struct personnage_s {
 
 typedef struct sprite_s {
     sfSprite *sprite;
-    sfTexture *texture;
     sfImage *image;
+    sfTexture *texture;
     sfIntRect *rect;
 } sprite_t;
 
@@ -112,6 +112,41 @@ typedef struct pnj_scene_s {
     sfFont *font;
 } pnj_scene_t;
 
+
+typedef struct set_clock {
+    sfClock *clock;
+    sfTime time;
+    sfVector2f offset;
+} set_clock_t;
+
+typedef struct texte_t {
+    sfText *text;
+    sfFont *font;
+    sfVector2f place;
+} text_shop;
+
+typedef struct set_inv_shop {
+    int prize;
+    char *name;
+    int place;
+} inv_shop;
+
+typedef struct shop_s {
+    sprite_t back;
+    sprite_t *items;
+    sprite_t *grey;
+    sprite_t *green;
+    sprite_t *red;
+    sprite_t *coins;
+    inv_shop *items_shop;
+    text_shop *text;
+    set_clock_t clock1;
+    double seconds1;
+    set_clock_t clock2;
+    double seconds2;
+    sfVector2i posi_mouse;
+} shop_t;
+
 typedef struct game_s {
     pnj_t **all_pnj;
     pnj_scene_t *pnj_scene;
@@ -119,6 +154,7 @@ typedef struct game_s {
     personnage_t *perso;
     charter_t *charter;
     map_t *map;
+    shop_t shop;
     sfRenderWindow *window;
     sfClock *clock;
     sfMusic *level_up_sound;

@@ -5,6 +5,9 @@
 ** global file
 */
 
+if (sfKeyboard_isKeyPressed(sfKeyE))
+open_shop(window, game);
+
 #ifndef MY_H_
     #define MY_H_
 
