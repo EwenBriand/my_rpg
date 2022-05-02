@@ -47,6 +47,9 @@ SRC	=	src/init_all/init_game.c	\
 		src/shop/init_shop.c \
 		src/shop/create_spritebis.c \
 		src/shop/display.c \
+		src/start_game.c \
+		src/menu/button.c \
+		src/menu/clickable_btn.c \
 
 OBJ	=	$(SRC:.c=.o)
 

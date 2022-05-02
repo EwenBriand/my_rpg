@@ -5,9 +5,9 @@
 ** change_map
 */
 
+#include <SFML/Graphics.h>
 #include "../../include/my.h"
 #include "stdlib.h"
-#include <SFML/Graphics.h>
 
 static void create_new_map(game_t *game, char *map, char *tab)
 {
@@ -26,7 +26,7 @@ void change_map(sfRenderWindow *window, game_t *game, int code)
     sfVector2f pos;
     destroy_map(game->map);
     if (code == 2)
-        create_new_map(game, "maps/city1.png", "map_int/cave.int");
+        create_new_map(game, "maps/cave.png", "map_int/cave.int");
     else {
         create_new_map(game, "maps/city1.png", "map_int/city1.int");
         game->charter->exep[1] = 0;

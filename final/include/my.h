@@ -16,6 +16,7 @@
 //#include <math.h>
 //#include <stdio.h>
 //#include <stdlib.h>
+#include "defender.h"
 #include "struct.h"
 
 static const int ERROR_VALUE = 84;
@@ -25,6 +26,7 @@ static const int INV_SIZE = 20;
 static const int NB_SORTS = 3;
 static const int NB_PNJ = 5;
 
+// LIB
 int my_strlen_int(int nb);
 int my_strlen(char const *str);
 char *my_strcat(char *dest, char const *src);
@@ -35,6 +37,10 @@ void my_putchar(char c);
 char *get_buffer(char const *file);
 int my_strcmp(char *comp1, char *comp2);
 int my_atoi(char *str);
+
+// GAME
+
+int start_game(sfRenderWindow *window);
 
 pnj_t *init_pnj2(void);
 pnj_t **init_pnjs(void);
@@ -91,6 +97,7 @@ void destroy_charter(charter_t *charter);
 void destroy_pnj_scene(pnj_scene_t *pnj_scene);
 void destroy_particule(sfVertexArray **particule);
 
+// SHOP
 void init_shop(game_t *game);
 void open_shop(sfRenderWindow *window, game_t *game);
 void create_sprite_coins(shop_t *shop);
@@ -100,5 +107,19 @@ void display_button(
     sfRenderWindow *window, sfVector2i mouse, shop_t *shop, game_t *game);
 void display_color(
     sfRenderWindow *window, shop_t *shop, sprite_t color, int i);
+
+// MENU
+void open_window(window_t *var_wind);
+play_btn_t *button(sfRenderWindow *window);
+exit_btn_t *exit_btn(sfRenderWindow *window);
+void display_image(window_t *var_wind, sfSprite *sprite, int *status);
+option_btn_t *option_btn(sfRenderWindow *window);
+how_play_btn_t *how_play_btn(sfRenderWindow *window);
+void get_poss_mouse(window_t *var_wind);
+int clickable_btn(
+    window_t *window, play_btn_t *var, exit_btn_t *exite, int status);
+
+int press_exit(window_t *poss, exit_btn_t *var, int status);
+int press_play(window_t *poss, play_btn_t *var, int status);
 
 #endif
