@@ -106,4 +106,5 @@ int give_type(game_t *game)
         return 1;
     if (game->map->pos[1] < 11 && game->map->pos[1] > -1)
         return 2;
+    return 0;
 }

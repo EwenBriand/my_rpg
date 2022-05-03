@@ -20,7 +20,7 @@ static int is_compatible(game_t *game, int y, int x)
             || pos_new == 0 || pos_new == 12 || pos_new == 1))
         return (1);
     else if ((pos_act == 1 || pos_act == 6 || pos_act == 7 || pos_act == 8
-                 || pos_act == 9 || pos_act == 0 || pos_new == 12)
+                 || pos_act == 9 || pos_act == 0 || pos_act == 12)
         && (pos_new == 3 || pos_new == 4 || pos_new == 5 || pos_new == 10
             || pos_new == 13 || pos_new == 14 || pos_new == 2))
         return (1);
@@ -73,16 +73,18 @@ void my_event(sfRenderWindow *window, game_t *game)
     sfEvent event;
 
     while (sfRenderWindow_pollEvent(window, &event)) {
-        if (event.type == sfEvtClosed || sfKeyboard_isKeyPressed(sfKeyEscape))
+        if (event.type == sfEvtClosed)
             game->state = 1;
         if (event.type == sfEvtKeyReleased) {
             move_vertical(game, event);
             move_horizontal(game, event);
             interaction(window, game, event);
-            if (event.key.code == sfKeyF) {
+            if (event.key.code == sfKeyF) { // a degager a la fin
                 add_object_in_inv(game, "faux", 1);
                 game->all_pnj[1]->nb_obj = 5;
             }
         }
+        if (sfKeyboard_isKeyPressed(sfKeyEscape))
+            pause_menu(window, game);
     }
 }

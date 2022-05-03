@@ -9,14 +9,13 @@
 #include <stdlib.h>
 #include "my.h"
 
-play_btn_t *button(sfRenderWindow *window)
+play_btn_t *button(void)
 {
     play_btn_t *var = malloc(sizeof(play_btn_t));
     if (var == NULL)
         return NULL;
     var->play_b = sfTexture_createFromFile("ressources/btn_new.png", NULL);
     var->play_sprite = sfSprite_create();
-    var->event;
     sfSprite_setTexture(var->play_sprite, var->play_b, sfFalse);
     var->pb_pos_x = 830;
     var->pb_pos_y = 450;
@@ -29,7 +28,7 @@ play_btn_t *button(sfRenderWindow *window)
     return var;
 }
 
-exit_btn_t *exit_btn(sfRenderWindow *window)
+exit_btn_t *exit_btn(void)
 {
     exit_btn_t *var = malloc(sizeof(exit_btn_t));
     if (var == NULL)
@@ -45,11 +44,11 @@ exit_btn_t *exit_btn(sfRenderWindow *window)
     var->play_b_scale.y = 6.5;
     sfSprite_setPosition(var->play_sprite, var->play_b_pos);
     sfSprite_setScale(var->play_sprite, var->play_b_scale);
-    option_btn(window);
+    option_btn();
     return var;
 }
 
-option_btn_t *option_btn(sfRenderWindow *window)
+option_btn_t *option_btn(void)
 {
     option_btn_t *var = malloc(sizeof(option_btn_t));
     if (var == NULL)
@@ -65,11 +64,11 @@ option_btn_t *option_btn(sfRenderWindow *window)
     var->play_b_scale.y = 6.5;
     sfSprite_setPosition(var->play_sprite, var->play_b_pos);
     sfSprite_setScale(var->play_sprite, var->play_b_scale);
-    how_play_btn(window);
+    how_play_btn();
     return var;
 }
 
-how_play_btn_t *how_play_btn(sfRenderWindow *window)
+how_play_btn_t *how_play_btn(void)
 {
     how_play_btn_t *var = malloc(sizeof(how_play_btn_t));
     if (var == NULL)

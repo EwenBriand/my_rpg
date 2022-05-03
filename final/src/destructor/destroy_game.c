@@ -5,8 +5,8 @@
 ** destroy_game
 */
 
-#include "../../include/my.h"
 #include <SFML/Audio.h>
+#include "../../include/my.h"
 #include "stdlib.h"
 
 void destroy_game(game_t *game)
@@ -23,6 +23,8 @@ void destroy_game(game_t *game)
     destroy_charter(game->charter);
     destroy_map(game->map);
     destroy_particule(game->particule_array);
+    destroy_sprite(game->resume_btn);
+    destroy_sprite(game->quit_btn);
 
     free(game);
 }

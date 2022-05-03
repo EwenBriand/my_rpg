@@ -26,7 +26,6 @@ void check_close(sfRenderWindow *window)
 
 void open_shop(sfRenderWindow *window, game_t *game)
 {
-    // sfClock_restart(game->shop.clock1.clock);
     game->shop.posi_mouse = sfMouse_getPositionRenderWindow(window);
     sfRenderWindow_drawSprite(window, game->shop.back.sprite, NULL);
     for (int i = 0; i != 10; i++) {

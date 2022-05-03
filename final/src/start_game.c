@@ -6,19 +6,23 @@
 */
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 #include "my.h"
 
 void make_code_map(sfRenderWindow *window, game_t *game)
 {
+    srand(time(NULL));
+    int nb_mob = rand() % 6 + 1;
     int code = game->map->map[game->charter->pos[0]][game->charter->pos[1]];
 
+    printf("fight %i %i\n", game->fight, nb_mob);
     if (code == 3 || code == 4 || code == 5 || code == 10)
-        if (game->fight == 3)
+        if (game->fight == 3) {
             game->fight = 0;
-        // fight
-        else
+        } else
             ++game->fight;
-    if (code == 2 || code == 14)
+    else if (code == 2 || code == 14)
         change_map(window, game, code);
 }
 
@@ -37,13 +41,14 @@ void my_game(sfRenderWindow *window, game_t *game)
             update_map(game->map, window, game);
             make_code_map(window, game);
             game->state = 0;
-
+            // a degager a la fin
             printf("%d %d\nok %d %d\n", game->charter->pos[0],
                 game->charter->pos[1], game->perso->xp, game->perso->xp_supp);
             for (int i = 0; game->perso->inv->inv[i] != NULL; ++i)
                 printf("%s %d\n", game->perso->inv->inv[i]->name,
                     game->perso->inv->inv[i]->stack);
             printf("credits: %i\n", game->perso->credits);
+            //
         }
         level_up(window, game);
     }

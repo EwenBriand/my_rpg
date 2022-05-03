@@ -6,8 +6,8 @@
 */
 
 #include "../../include/my.h"
-#include "SFML/Graphics.h"
 #include "SFML/Audio.h"
+#include "SFML/Graphics.h"
 
 static void while_loop_pnj2(sfRenderWindow *window, game_t *game)
 {
@@ -65,6 +65,7 @@ static void first_quest(sfRenderWindow *window, game_t *game)
         sfMusic_stop(game->quest_complete_sound);
     }
 }
+
 void interaction_pnj2(sfRenderWindow *window, game_t *game)
 {
     game->state = 3;

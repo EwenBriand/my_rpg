@@ -112,7 +112,6 @@ typedef struct pnj_scene_s {
     sfFont *font;
 } pnj_scene_t;
 
-
 typedef struct set_clock {
     sfClock *clock;
     sfTime time;
@@ -148,6 +147,8 @@ typedef struct shop_s {
 } shop_t;
 
 typedef struct game_s {
+    sprite_t *resume_btn;
+    sprite_t *quit_btn;
     pnj_t **all_pnj;
     pnj_scene_t *pnj_scene;
     objet_t **all_objets;

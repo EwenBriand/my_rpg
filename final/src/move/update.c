@@ -5,35 +5,30 @@
 ** update
 */
 
-#include "SFML/Graphics.h"
 #include "../../include/my.h"
+#include "SFML/Graphics.h"
 
 void update_charter(game_t *game)
 {
-    sfVector2f pos;
     sfSprite_setRotation(
         game->charter->sprite->sprite, game->charter->rota * 90);
 
     if (game->charter->rota == 0) {
-        pos = sfSprite_getPosition(game->charter->sprite->sprite);
         sfSprite_setPosition(game->charter->sprite->sprite,
             (sfVector2f){1920 / 2 - 100 + game->charter->exep[0],
                 1080 / 2 - 70 + game->charter->exep[1]});
     }
     if (game->charter->rota == 1) {
-        pos = sfSprite_getPosition(game->charter->sprite->sprite);
         sfSprite_setPosition(game->charter->sprite->sprite,
             (sfVector2f){1920 / 2 - 100 + 80 + game->charter->exep[0],
                 game->charter->exep[1] + 1080 / 2 - 70 - 20});
     }
     if (game->charter->rota == 2) {
-        pos = sfSprite_getPosition(game->charter->sprite->sprite);
         sfSprite_setPosition(game->charter->sprite->sprite,
             (sfVector2f){1920 / 2 - 100 + 90 + game->charter->exep[0],
                 game->charter->exep[1] + 1080 / 2 - 70 + 60});
     }
     if (game->charter->rota == 3) {
-        pos = sfSprite_getPosition(game->charter->sprite->sprite);
         sfSprite_setPosition(game->charter->sprite->sprite,
             (sfVector2f){1920 / 2 - 100 + game->charter->exep[0],
                 game->charter->exep[1] + 1080 / 2 - 70 + 75});

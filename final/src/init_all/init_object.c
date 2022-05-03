@@ -5,9 +5,9 @@
 ** init_object
 */
 
-#include "stdlib.h"
-#include "../../include/struct.h"
 #include "../../include/my.h"
+#include "../../include/struct.h"
+#include "stdlib.h"
 
 stat_t *empty_stat(void)
 {
@@ -63,7 +63,8 @@ objet_t **init_all_objects(void)
     objects[12] = creat_object("baie", 4, NULL);
     objects[13] = creat_object("bois", 5, NULL);
     objects[14] = creat_object("faux", 3, NULL);
-    objects[15] = NULL;
+    objects[15] = creat_object("venin", 3, NULL);
+    objects[16] = NULL;
 
     return (objects);
 }

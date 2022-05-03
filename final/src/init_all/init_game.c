@@ -5,9 +5,9 @@
 ** init_game
 */
 
+#include <SFML/Audio.h>
 #include "../../include/my.h"
 #include "stdlib.h"
-#include <SFML/Audio.h>
 
 static void creat_map_and_charter(game_t *game)
 {
@@ -20,6 +20,25 @@ static void creat_map_and_charter(game_t *game)
     pos[2] = 1920 / 100 - 1;
     pos[3] = 1080 / 100 - 1;
     game->charter = create_charter("sprites/charter.png", pos);
+    free(pos);
+}
+
+void create_pause_button(game_t *game)
+{
+    int *pos = malloc(sizeof(int) * 2);
+    int *rect = malloc(sizeof(int) * 4);
+    rect[0] = 0;
+    rect[1] = 0;
+    rect[2] = 200;
+    rect[3] = 200;
+    pos[0] = 1920 / 2 - 170;
+    pos[1] = 1080 / 2 - 250;
+    game->resume_btn = create_sprite("ressources/resume.png", rect, pos);
+    pos[0] = 1920 / 2 - 170;
+    pos[1] = 1080 / 2 + 100;
+    game->quit_btn = create_sprite("ressources/btn_quit.png", rect, pos);
+    sfSprite_setScale(game->resume_btn->sprite, (sfVector2f){8, 8});
+    sfSprite_setScale(game->quit_btn->sprite, (sfVector2f){8, 8});
     free(pos);
 }
 
@@ -41,6 +60,7 @@ game_t *creat_my_game(void)
     game->fireworks = sfMusic_createFromFile("music/fireworks.ogg");
     game->quest_complete_sound = sfMusic_createFromFile("music/quest.ogg");
     game->particule_array = init_all_array();
+    create_pause_button(game);
     return (game);
 }
 

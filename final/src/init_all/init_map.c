@@ -6,39 +6,49 @@
 */
 
 #include "../../include/my.h"
-#include "stdlib.h"
-#include "stdio.h"
 #include "SFML/Graphics.h"
+#include "stdio.h"
+#include "stdlib.h"
 
-int **creat_int_array_from_file(char *path)
+static int change_temp(char *temp, int pos, char c)
+{
+    temp[pos++] = c;
+    temp[pos] = '\0';
+    return pos;
+}
+
+static int **for_loop(char *buffer, char *temp)
 {
     int **array = malloc(sizeof(int *) * 13);
-    char *buffer = get_buffer(path);
     int pos[3] = {0, 0, 0};
-    char *temp = malloc(sizeof(char) * 5);
     array[0] = malloc(sizeof(int) * 21);
-
     for (int i = 0; buffer[i] != '\0'; ++i) {
         if (buffer[i] == '\n' && buffer[i + 1] == '\n')
             break;
         if (buffer[i] == '\n') {
-            printf("\n");
             array[pos[1]++][pos[0]] = -1;
             array[pos[1]] = malloc(sizeof(int) * 21);
             pos[0] = 0;
         } else if (buffer[i] == ' ') {
-            printf("%i ", my_atoi(temp));
             array[pos[1]][pos[0]++] = my_atoi(temp);
             pos[2] = 0;
         } else {
-            temp[pos[2]++] = buffer[i];
-            temp[pos[2]] = '\0';
+            pos[2] = change_temp(temp, pos[2], buffer[i]);
         }
     }
     array[pos[1] + 1] = NULL;
+    return array;
+}
+
+int **creat_int_array_from_file(char *path)
+{
+    char *buffer = get_buffer(path);
+    char *temp = malloc(sizeof(char) * 5);
+    int **array = for_loop(buffer, temp);
+
     free(buffer);
     free(temp);
-    return (array);
+    return array;
 }
 
 map_t *create_map(char *path, int *pos, char *path_int)

@@ -21,7 +21,7 @@
 
 static const int ERROR_VALUE = 84;
 static const int END_VALUE = 0;
-static const int NB_OBJECTS = 15;
+static const int NB_OBJECTS = 16;
 static const int INV_SIZE = 20;
 static const int NB_SORTS = 3;
 static const int NB_PNJ = 5;
@@ -45,6 +45,7 @@ int start_game(sfRenderWindow *window);
 pnj_t *init_pnj2(void);
 pnj_t **init_pnjs(void);
 stat_t *empty_stat(void);
+stat_t *creat_stat(void);
 game_t *creat_my_game(void);
 personnage_t *init_perso(void);
 objet_t **init_all_objects(void);
@@ -61,6 +62,7 @@ void event_pnj_scene(sfRenderWindow *window, game_t *game);
 void update_charter(game_t *game);
 void update_map(map_t *map, sfRenderWindow *window, game_t *game);
 
+void my_big_effect(sfRenderWindow *window, game_t *game);
 void level_up(sfRenderWindow *window, game_t *game);
 
 int give_type(game_t *game);
@@ -110,16 +112,19 @@ void display_color(
 
 // MENU
 void open_window(window_t *var_wind);
-play_btn_t *button(sfRenderWindow *window);
-exit_btn_t *exit_btn(sfRenderWindow *window);
+play_btn_t *button(void);
+exit_btn_t *exit_btn(void);
 void display_image(window_t *var_wind, sfSprite *sprite, int *status);
-option_btn_t *option_btn(sfRenderWindow *window);
-how_play_btn_t *how_play_btn(sfRenderWindow *window);
+option_btn_t *option_btn(void);
+how_play_btn_t *how_play_btn(void);
 void get_poss_mouse(window_t *var_wind);
 int clickable_btn(
     window_t *window, play_btn_t *var, exit_btn_t *exite, int status);
 
 int press_exit(window_t *poss, exit_btn_t *var, int status);
 int press_play(window_t *poss, play_btn_t *var, int status);
+void pause_menu(sfRenderWindow *window, game_t *game);
+
+void my_fight(sfRenderWindow *window, game_t *game, int nb_mobs);
 
 #endif

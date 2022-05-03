@@ -16,6 +16,7 @@ SRC	=	src/init_all/init_game.c	\
 		src/init_all/init_object.c	\
 		src/init_all/init_pnj_scene.c	\
 		src/init_all/init_all_particule.c \
+		src/init_all/create_stat.c \
 		src/event/event.c	\
 		src/event/event_pnj.c	\
 		src/move/move_charter.c		\
@@ -50,6 +51,8 @@ SRC	=	src/init_all/init_game.c	\
 		src/start_game.c \
 		src/menu/button.c \
 		src/menu/clickable_btn.c \
+		src/pause_menu/pause_menu.c \
+		src/my_big_effect.c \
 
 OBJ	=	$(SRC:.c=.o)
 

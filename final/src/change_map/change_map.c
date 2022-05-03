@@ -23,7 +23,6 @@ static void create_new_map(game_t *game, char *map, char *tab)
 
 void change_map(sfRenderWindow *window, game_t *game, int code)
 {
-    sfVector2f pos;
     destroy_map(game->map);
     if (code == 2)
         create_new_map(game, "maps/cave.png", "map_int/cave.int");

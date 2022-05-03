@@ -24,6 +24,15 @@ static void add_obj(game_t *game, objet_t *objet)
     }
 }
 
+static void is_a_equipment(game_t *game, objet_t *objet)
+{
+    if (objet->stack != 1)
+        ++objet->stack;
+    game->perso->inv->inv[game->perso->inv->nb_obj] = objet;
+    ++game->perso->inv->nb_obj;
+    game->perso->inv->inv[game->perso->inv->nb_obj] = NULL;
+}
+
 void add_object_in_inv(game_t *game, char *name, int nb)
 {
     objet_t *objet = NULL;
@@ -39,11 +48,7 @@ void add_object_in_inv(game_t *game, char *name, int nb)
         return;
     for (int i = 0; i < nb; i++) {
         if (objet->type == 0) {
-            if (objet->stack != 1)
-                ++objet->stack;
-            game->perso->inv->inv[game->perso->inv->nb_obj] = objet;
-            ++game->perso->inv->nb_obj;
-            game->perso->inv->inv[game->perso->inv->nb_obj] = NULL;
+            is_a_equipment(game, objet);
         } else
             add_obj(game, objet);
     }

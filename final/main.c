@@ -9,15 +9,6 @@
 #include <stdlib.h>
 #include "my.h"
 
-static sfRenderWindow *create_renderwindow(
-    window_t *var_wind, unsigned int x, unsigned int y, unsigned int bpp)
-{
-    char *title;
-    var_wind->vid_mod = (sfVideoMode){x, y, bpp};
-    return (sfRenderWindow_create(
-        var_wind->vid_mod, title, sfResize | sfClose, NULL));
-}
-
 void display_all(sfRenderWindow *window, sfSprite *sprite,
     sfSprite *exit_sprite, sfSprite *option_sprite)
 {
@@ -29,10 +20,10 @@ void display_all(sfRenderWindow *window, sfSprite *sprite,
 
 void display_image(window_t *var_wind, sfSprite *sprite, int *status)
 {
-    play_btn_t *var = button(var_wind->window);
-    exit_btn_t *exite = exit_btn(var_wind->window);
-    option_btn_t *option = option_btn(var_wind->window);
-    how_play_btn_t *htp = how_play_btn(var_wind->window);
+    play_btn_t *var = button();
+    exit_btn_t *exite = exit_btn();
+    option_btn_t *option = option_btn();
+    how_play_btn_t *htp = how_play_btn();
     while (sfRenderWindow_isOpen(var_wind->window) && *status == 0) {
         display_all(
             var_wind->window, sprite, exite->play_sprite, option->play_sprite);
