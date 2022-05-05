@@ -16,12 +16,13 @@ void make_code_map(sfRenderWindow *window, game_t *game)
     int nb_mob = rand() % 6 + 1;
     int code = game->map->map[game->charter->pos[0]][game->charter->pos[1]];
 
-    printf("fight %i %i\n", game->fight, nb_mob);
+    printf("fight %i %i %i\n", game->nb_fight, nb_mob, game->perso->stat->pv);
     if (code == 3 || code == 4 || code == 5 || code == 10)
-        if (game->fight == 3) {
-            game->fight = 0;
+        if (game->nb_fight == 2) {
+            game->nb_fight = 0;
+            my_fight(window, game, nb_mob);
         } else
-            ++game->fight;
+            ++game->nb_fight;
     else if (code == 2 || code == 14)
         change_map(window, game, code);
 }

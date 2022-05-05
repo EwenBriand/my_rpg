@@ -18,6 +18,18 @@ void display_all(sfRenderWindow *window, sfSprite *sprite,
     sfRenderWindow_drawSprite(window, option_sprite, NULL);
 }
 
+static menu_event(
+    window_t *var_wind, int *status, play_btn_t *var, exit_btn_t *exite)
+{
+    while (sfRenderWindow_pollEvent(var_wind->window, &var_wind->event)) {
+        if (var_wind->event.type == sfEvtClosed
+            || sfKeyboard_isKeyPressed(sfKeyEscape))
+            *status = 1;
+        if (var_wind->event.type == sfEvtMouseButtonPressed)
+            *status = clickable_btn(var_wind, var, exite, *status);
+    }
+}
+
 void display_image(window_t *var_wind, sfSprite *sprite, int *status)
 {
     play_btn_t *var = button();
@@ -29,13 +41,7 @@ void display_image(window_t *var_wind, sfSprite *sprite, int *status)
             var_wind->window, sprite, exite->play_sprite, option->play_sprite);
         sfRenderWindow_drawSprite(var_wind->window, var->play_sprite, NULL);
         sfRenderWindow_drawSprite(var_wind->window, htp->play_sprite, NULL);
-        while (sfRenderWindow_pollEvent(var_wind->window, &var_wind->event)) {
-            if (var_wind->event.type == sfEvtClosed
-                || sfKeyboard_isKeyPressed(sfKeyEscape))
-                *status = 1;
-            if (var_wind->event.type == sfEvtMouseButtonPressed)
-                *status = clickable_btn(var_wind, var, exite, *status);
-        }
+        menu_event(var_wind, status, var, exite);
         sfRenderWindow_display(var_wind->window);
     }
 }

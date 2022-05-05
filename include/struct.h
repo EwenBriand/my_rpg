@@ -22,13 +22,13 @@ typedef struct stat_s {
     int def_ma;
 } stat_t;
 
-//type :
-//0 = equipement on prend en compte stat;
-//1 = potion (+ 20 PV);
-// 2 = antidote;
-//3 = objet de quete;
-//4 = baie;
-//5 = bois
+// type :
+// 0 = equipement on prend en compte stat;
+// 1 = potion (+ 20 PV);
+//  2 = antidote;
+// 3 = objet de quete;
+// 4 = baie;
+// 5 = bois
 
 typedef struct objet_s {
     char *name;
@@ -61,10 +61,10 @@ typedef struct sort_s {
     char *description;
 } sort_t;
 
-//type :
-//0 = ramener obj;
-//1 = tuer des bestioles;
-//2 = autre
+// type :
+// 0 = ramener obj;
+// 1 = tuer des bestioles;
+// 2 = autre
 
 typedef struct pnj_s {
     char *name;
@@ -158,6 +158,20 @@ typedef struct shop_s {
     sfVector2i posi_mouse;
 } shop_t;
 
+typedef struct enemy_s {
+    sprite_t *sprite;
+    stat_t *stats;
+} enemy_t;
+
+typedef struct fight_s {
+    sprite_t *back;
+    enemy_t **enemy;
+    sfText *text;
+    sfText *hp;
+    int status;
+    int venin;
+    char *string;
+} fight_t;
 typedef struct game_s {
     sprite_t *resume_btn;
     sprite_t *quit_btn;
@@ -167,6 +181,7 @@ typedef struct game_s {
     personnage_t *perso;
     charter_t *charter;
     map_t *map;
+    fight_t *fight;
     shop_t shop;
     sfRenderWindow *window;
     sfClock *clock;
@@ -176,7 +191,8 @@ typedef struct game_s {
     sfVertexArray **particule_array;
     int state;
     int input;
-    int fight;
+    int nb_fight;
+    int mobs;
 } game_t;
 
 #endif

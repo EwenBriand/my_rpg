@@ -42,19 +42,28 @@ void create_pause_button(game_t *game)
     free(pos);
 }
 
+static void init_lot_of_things(game_t *game)
+{
+    game->state = 0;
+    game->nb_fight = 0;
+    game->mobs = 0;
+    game->fight->venin = 0;
+    game->fight->status = 0;
+    game->clock = sfClock_create();
+    game->shop.clock1.clock = sfClock_create();
+    game->shop.clock2.clock = sfClock_create();
+}
+
 game_t *creat_my_game(void)
 {
     game_t *game = malloc(sizeof(game_t));
     creat_map_and_charter(game);
-    game->state = 0;
-    game->fight = 0;
-    game->clock = sfClock_create();
-    game->shop.clock1.clock = sfClock_create();
-    game->shop.clock2.clock = sfClock_create();
+    game->pnj_scene = init_pnj_scene();
+    init_fight(game);
+    init_lot_of_things(game);
     game->perso = init_perso();
     game->all_objets = init_all_objects();
     game->all_pnj = init_pnjs();
-    game->pnj_scene = init_pnj_scene();
     init_shop(game);
     game->level_up_sound = sfMusic_createFromFile("music/level_up.ogg");
     game->fireworks = sfMusic_createFromFile("music/fireworks.ogg");
@@ -63,5 +72,3 @@ game_t *creat_my_game(void)
     create_pause_button(game);
     return (game);
 }
-
-// 0 18  -2 14

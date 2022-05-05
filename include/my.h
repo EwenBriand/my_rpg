@@ -27,6 +27,7 @@ static const int NB_SORTS = 3;
 static const int NB_PNJ = 5;
 
 // LIB
+char *my_int_to_str(int nb);
 int my_strlen_int(int nb);
 int my_strlen(char const *str);
 char *my_strcat(char *dest, char const *src);
@@ -47,6 +48,8 @@ pnj_t **init_pnjs(void);
 stat_t *empty_stat(void);
 stat_t *creat_stat(void);
 game_t *creat_my_game(void);
+void init_text(game_t *game);
+void init_fight(game_t *game);
 personnage_t *init_perso(void);
 objet_t **init_all_objects(void);
 pnj_scene_t *init_pnj_scene(void);
@@ -125,6 +128,15 @@ int press_exit(window_t *poss, exit_btn_t *var, int status);
 int press_play(window_t *poss, play_btn_t *var, int status);
 void pause_menu(sfRenderWindow *window, game_t *game);
 
+int phy_dmg_deal(game_t *game);
+int mag_dmg_deal(game_t *game);
+void mob_turn(game_t *game);
+void player_turn(sfRenderWindow *window, game_t *game);
+void player_event(sfRenderWindow *window, game_t *game);
+void draw_fight_scene(sfRenderWindow *window, game_t *game);
+void draw_result_scene(sfRenderWindow *window, game_t *game);
+void print_turn_result(sfRenderWindow *window, game_t *game);
 void my_fight(sfRenderWindow *window, game_t *game, int nb_mobs);
+void event_fight_result(sfRenderWindow *window, game_t *game, int *status);
 
 #endif
