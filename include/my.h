@@ -6,18 +6,18 @@
 */
 
 #ifndef _LIBALL_POOL
-#define _LIBALL_POOL
+    #define _LIBALL_POOL
 
 //#include <SFML/Audio.h>
-#include <SFML/Graphics.h>
+    #include <SFML/Graphics.h>
 //#include <SFML/Graphics/Vertex.h>
 //#include <SFML/System.h>
 //#include <SFML/Window.h>
 //#include <math.h>
 //#include <stdio.h>
 //#include <stdlib.h>
-#include "defender.h"
-#include "struct.h"
+    #include "defender.h"
+    #include "struct.h"
 
 static const int ERROR_VALUE = 84;
 static const int END_VALUE = 0;

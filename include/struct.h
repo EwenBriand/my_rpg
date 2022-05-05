@@ -6,10 +6,10 @@
 */
 
 #ifndef F9C0CC17_CC2E_4697_A288_7F066C90954A
-#define F9C0CC17_CC2E_4697_A288_7F066C90954A
+    #define F9C0CC17_CC2E_4697_A288_7F066C90954A
 
-#include <SFML/Audio.h>
-#include <SFML/Graphics.h>
+    #include <SFML/Audio.h>
+    #include <SFML/Graphics.h>
 //#include <SFML/System.h>
 //#include <SFML/Window.h>
 
