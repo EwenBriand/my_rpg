@@ -143,7 +143,7 @@ typedef struct set_inv_shop {
 } inv_shop;
 
 typedef struct shop_s {
-    sprite_t *back;
+    sprite_t back;
     sprite_t *items;
     sprite_t *grey;
     sprite_t *green;
@@ -184,7 +184,7 @@ typedef struct game_s {
     charter_t *charter;
     map_t *map;
     fight_t *fight;
-    shop_t *shop;
+    shop_t shop;
     sfRenderWindow *window;
     sfClock *clock;
     sfMusic *level_up_sound;

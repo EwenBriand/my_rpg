@@ -66,7 +66,6 @@ SRC	=	src/init_all/init_game.c	\
 		src/fight/fight_smoke.c \
 		src/fight/dmg_deal.c \
 		src/destructor/destroy_fight.c \
-		src/destructor/destroy_shop.c \
 
 OBJ	=	$(SRC:.c=.o)
 

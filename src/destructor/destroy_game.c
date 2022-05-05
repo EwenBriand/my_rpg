@@ -26,7 +26,6 @@ void destroy_game(game_t *game)
     destroy_sprite(game->resume_btn);
     destroy_sprite(game->quit_btn);
     destroy_fight(game->fight);
-    destroy_shop(game);
 
     free(game);
 }

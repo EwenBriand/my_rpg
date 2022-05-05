@@ -32,9 +32,9 @@ void create_sprite_shop(shop_t *shop)
     sfVector2f scale = (sfVector2f){5, 3};
     sfTexture *texture =
         sfTexture_createFromFile("sprites/shop/back.jpg", NULL);
-    shop->back->sprite = sfSprite_create();
-    sfSprite_setTexture(shop->back->sprite, texture, sfTrue);
-    sfSprite_setScale(shop->back->sprite, scale);
+    shop->back.sprite = sfSprite_create();
+    sfSprite_setTexture(shop->back.sprite, texture, sfTrue);
+    sfSprite_setScale(shop->back.sprite, scale);
     shop->items = malloc(sizeof(sprite_t) * 10);
     for (int i = 0; i != 10; i++) {
         create_sprite_items(shop->items, i, pos, rect[i]);
@@ -84,9 +84,8 @@ void create_sprite_prize(shop_t *shop)
 
 void init_shop(game_t *game)
 {
-    game->shop = malloc(sizeof(shop_t));
-    create_sprite_shop(game->shop);
-    create_sprite_prize(game->shop);
-    make_shop(game->shop);
-    create_sprite_text(game->shop);
+    create_sprite_shop(&game->shop);
+    create_sprite_prize(&game->shop);
+    make_shop(&game->shop);
+    create_sprite_text(&game->shop);
 }

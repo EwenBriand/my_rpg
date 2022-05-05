@@ -26,19 +26,19 @@ void check_close(sfRenderWindow *window)
 
 void open_shop(sfRenderWindow *window, game_t *game)
 {
-    game->shop->posi_mouse = sfMouse_getPositionRenderWindow(window);
-    sfRenderWindow_drawSprite(window, game->shop->back->sprite, NULL);
+    game->shop.posi_mouse = sfMouse_getPositionRenderWindow(window);
+    sfRenderWindow_drawSprite(window, game->shop.back.sprite, NULL);
     for (int i = 0; i != 10; i++) {
-        sfRenderWindow_drawSprite(window, game->shop->items[i].sprite, NULL);
-        display_color(window, game->shop, game->shop->grey[i], i);
+        sfRenderWindow_drawSprite(window, game->shop.items[i].sprite, NULL);
+        display_color(window, &game->shop, game->shop.grey[i], i);
     }
-    display_button(window, game->shop->posi_mouse, game->shop, game);
+    display_button(window, game->shop.posi_mouse, &game->shop, game);
     check_close(window);
-    game->shop->clock1.time = sfClock_getElapsedTime(game->shop->clock1.clock);
-    game->shop->seconds1 =
-        (double) game->shop->clock1.time.microseconds / 1000000.0;
-    if (sfKeyboard_isKeyPressed(sfKeySpace) && game->shop->seconds1 > 1) {
+    game->shop.clock1.time = sfClock_getElapsedTime(game->shop.clock1.clock);
+    game->shop.seconds1 =
+        (double) game->shop.clock1.time.microseconds / 1000000.0;
+    if (sfKeyboard_isKeyPressed(sfKeySpace) && game->shop.seconds1 > 1) {
         game->state = 0;
-        sfClock_restart(game->shop->clock1.clock);
+        sfClock_restart(game->shop.clock1.clock);
     }
 }
