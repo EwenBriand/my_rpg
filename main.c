@@ -18,7 +18,7 @@ void display_all(sfRenderWindow *window, sfSprite *sprite,
     sfRenderWindow_drawSprite(window, option_sprite, NULL);
 }
 
-static menu_event(
+static void menu_event(
     window_t *var_wind, int *status, play_btn_t *var, exit_btn_t *exite)
 {
     while (sfRenderWindow_pollEvent(var_wind->window, &var_wind->event)) {
