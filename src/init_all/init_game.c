@@ -50,8 +50,8 @@ static void init_lot_of_things(game_t *game)
     game->fight->venin = 0;
     game->fight->status = 0;
     game->clock = sfClock_create();
-    game->shop.clock1.clock = sfClock_create();
-    game->shop.clock2.clock = sfClock_create();
+    game->shop->clock1.clock = sfClock_create();
+    game->shop->clock2.clock = sfClock_create();
 }
 
 game_t *creat_my_game(void)

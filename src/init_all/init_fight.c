@@ -86,4 +86,5 @@ void init_fight(game_t *game)
     game->fight->enemy[1] = create_second_enemy();
     game->fight->enemy[2] = NULL;
     init_text(game);
+    create_slash(game);
 }

@@ -61,6 +61,12 @@ SRC	=	src/init_all/init_game.c	\
 		src/fight/print_turn_result.c \
 		src/init_all/init_fight.c \
 		src/fight/event_result.c \
+		src/fight/fight_slash.c \
+		src/init_all/create_slash.c \
+		src/fight/fight_smoke.c \
+		src/fight/dmg_deal.c \
+		src/destructor/destroy_fight.c \
+		src/destructor/destroy_shop.c \
 
 OBJ	=	$(SRC:.c=.o)
 

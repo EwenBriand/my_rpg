@@ -7,35 +7,7 @@
 
 #include "my.h"
 
-int phy_dmg_deal(game_t *game)
-{
-    int dmg = game->perso->stat->att_phy;
-    if (game->perso->equip->foot != NULL)
-        dmg += game->perso->equip->foot->stat->att_phy;
-    if (game->perso->equip->weapon != NULL)
-        dmg += game->perso->equip->weapon->stat->att_phy;
-    dmg -= game->fight->enemy[game->mobs]->stats->def_phy;
-    if (dmg < 0)
-        dmg = 0;
-    return dmg;
-}
-
-int mag_dmg_deal(game_t *game)
-{
-    int dmg = game->perso->stat->att_ma;
-    if (game->perso->equip->shoulder != NULL)
-        dmg += game->perso->equip->shoulder->stat->att_ma;
-    if (game->perso->equip->weapon != NULL)
-        dmg += game->perso->equip->weapon->stat->att_ma;
-    if (game->perso->equip->gauntlet != NULL)
-        dmg += game->perso->equip->gauntlet->stat->att_ma;
-    dmg -= game->fight->enemy[game->mobs]->stats->def_ma;
-    if (dmg < 0)
-        dmg = 0;
-    return dmg;
-}
-
-static void a_key_is_press(game_t *game, sfEvent event)
+static void player_action(sfRenderWindow *window, game_t *game, sfEvent event)
 {
     if (event.key.code == sfKeyP && is_in_inv(game, "potion", 1) != -1) {
         del_object_in_inv(game, "potion", 1);
@@ -50,13 +22,20 @@ static void a_key_is_press(game_t *game, sfEvent event)
         game->fight->status = 3;
         game->fight->venin = 0;
     }
+}
+
+static void a_key_is_press(sfRenderWindow *window, game_t *game, sfEvent event)
+{
+    player_action(window, game, event);
     if (event.key.code == sfKeyW) {
         game->fight->enemy[game->mobs]->stats->pv -= phy_dmg_deal(game);
         game->fight->status = 4;
+        my_slash(window, game);
     }
     if (event.key.code == sfKeyL) {
         game->fight->enemy[game->mobs]->stats->pv -= mag_dmg_deal(game);
         game->fight->status = 5;
+        my_smoke(window, game);
     }
 }
 
@@ -74,8 +53,8 @@ void player_event(sfRenderWindow *window, game_t *game)
     while (sfRenderWindow_pollEvent(window, &event)) {
         if (event.type == sfEvtClosed)
             sfRenderWindow_close(window);
-        if (event.type == sfEvtKeyReleased)
-            a_key_is_press(game, event);
+        if (event.type == sfEvtKeyReleased && game->fight->status == 0)
+            a_key_is_press(window, game, event);
         if (sfKeyboard_isKeyPressed(sfKeySpace) && game->fight->status >= 2
             && game->fight->status <= 5) {
             player_finish_turn(game);

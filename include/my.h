@@ -51,10 +51,12 @@ game_t *creat_my_game(void);
 void init_text(game_t *game);
 void init_fight(game_t *game);
 personnage_t *init_perso(void);
+void create_slash(game_t *game);
 objet_t **init_all_objects(void);
 pnj_scene_t *init_pnj_scene(void);
 sfVertexArray **init_all_array(void);
 charter_t *create_charter(char *path, int *pos);
+void my_slash(sfRenderWindow *window, game_t *game);
 sprite_t *create_sprite(char *path, int *p, int *position);
 sfIntRect *create_rect(int top, int left, int width, int height);
 map_t *create_map(char *path, int *pos, char *path_int);
@@ -94,7 +96,9 @@ void change_map(sfRenderWindow *window, game_t *game, int code);
 
 void destroy_map(map_t *map);
 void destroy_pnj(pnj_t **pnj);
+void destroy_shop(game_t *game);
 void destroy_game(game_t *game);
+void destroy_fight(fight_t *fight);
 void destroy_objet(objet_t **objet);
 void destroy_sprite(sprite_t *sprite);
 void destroy_perso(personnage_t *perso);
@@ -131,12 +135,13 @@ void pause_menu(sfRenderWindow *window, game_t *game);
 int phy_dmg_deal(game_t *game);
 int mag_dmg_deal(game_t *game);
 void mob_turn(game_t *game);
+void my_smoke(sfRenderWindow *window, game_t *game);
 void player_turn(sfRenderWindow *window, game_t *game);
 void player_event(sfRenderWindow *window, game_t *game);
-void draw_fight_scene(sfRenderWindow *window, game_t *game);
 void draw_result_scene(sfRenderWindow *window, game_t *game);
 void print_turn_result(sfRenderWindow *window, game_t *game);
 void my_fight(sfRenderWindow *window, game_t *game, int nb_mobs);
 void event_fight_result(sfRenderWindow *window, game_t *game, int *status);
+void draw_fight_scene(sfRenderWindow *window, game_t *game, int draw_or_not);
 
 #endif

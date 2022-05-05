@@ -34,10 +34,15 @@ static int player_def(game_t *game)
 char *my_int_to_str(int nb)
 {
     int i = 0;
-    char *str = malloc(sizeof(char) * (nb + 2));
+    int len = (nb < 0) ? (nb * -1) + 2 : nb + 2;
+    char *str = malloc(sizeof(char) * len);
 
     if (str == NULL)
         return (NULL);
+    if (nb < 0) {
+        str[i++] = '-';
+        nb = -nb;
+    }
     if (nb == 0)
         str[i++] = '0';
     for (; nb > 0; ++i) {
@@ -51,13 +56,16 @@ char *my_int_to_str(int nb)
 
 static void change_string(game_t *game, int dmg)
 {
+    char *temp;
     game->fight->string = "Vous avez pris ";
-    game->fight->string = my_strcat(game->fight->string, my_int_to_str(dmg));
-    game->fight->string = my_strcat(game->fight->string, " degat\n");
+    temp = my_strcat(game->fight->string, my_int_to_str(dmg));
+    game->fight->string = my_strcat(temp, " degat\n");
+    free(temp);
+    temp = game->fight->string;
     if (game->fight->venin == 1)
-        game->fight->string =
-            my_strcat(game->fight->string, "Vous etes empoisonne\n");
+        game->fight->string = my_strcat(temp, "Vous etes empoisonne\n");
     sfText_setString(game->fight->text, game->fight->string);
+    free(temp);
 }
 
 void mob_turn(game_t *game)
