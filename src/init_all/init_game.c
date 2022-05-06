@@ -44,6 +44,7 @@ void create_pause_button(game_t *game)
 
 static void init_lot_of_things(game_t *game)
 {
+    game->chest = 0;
     game->state = 0;
     game->nb_fight = 0;
     game->mobs = 0;

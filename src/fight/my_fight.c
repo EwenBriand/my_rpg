@@ -56,11 +56,19 @@ static int start_fight(sfRenderWindow *window, game_t *game, int nb_mobs)
     return 0;
 }
 
+static void is_win(game_t *game, int nb_mobs)
+{
+    if (game->all_pnj[1]->avancement == 2)
+        game->all_pnj[1]->nb_obj += nb_mobs;
+
+    add_object_in_inv(game, "venin", nb_mobs);
+}
+
 void my_fight(sfRenderWindow *window, game_t *game, int nb_mobs)
 {
     if (start_fight(window, game, nb_mobs) == 0) {
         if (game->mobs == 0)
-            add_object_in_inv(game, "venin", nb_mobs);
+            is_win(game, nb_mobs);
         else if (game->mobs == 1)
             add_object_in_inv(game, "poudre a canon", nb_mobs);
     } else {

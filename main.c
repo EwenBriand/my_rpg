@@ -73,8 +73,11 @@ int main(int ac, char **av, char **env)
 {
     if (env[0] == NULL)
         return ERROR_VALUE;
-
+    sfMusic *music = sfMusic_createFromFile("music/music.ogg");
+    sfMusic_play(music);
+    sfMusic_setLoop(music, sfTrue);
     window_t *var_wind = malloc(sizeof(window_t));
     open_window(var_wind);
+    sfMusic_destroy(music);
     return END_VALUE;
 }

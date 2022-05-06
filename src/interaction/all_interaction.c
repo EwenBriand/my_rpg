@@ -27,6 +27,12 @@ static void make_arbre(game_t *game)
     add_object_in_inv(game, "bois", nb_bois);
 }
 
+static void my_chest(sfRenderWindow *window, game_t *game, int code)
+{
+    if (code == 13)
+        open_chest(window, game);
+}
+
 void make_interaction(sfRenderWindow *window, game_t *game, int code)
 {
     if (code == 12) {
@@ -47,4 +53,5 @@ void make_interaction(sfRenderWindow *window, game_t *game, int code)
         interaction_pnj4(window, game);
     if (code == 8)
         interaction_pnj5(window, game);
+    my_chest(window, game, code);
 }

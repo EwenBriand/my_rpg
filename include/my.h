@@ -6,18 +6,18 @@
 */
 
 #ifndef _LIBALL_POOL
-    #define _LIBALL_POOL
+#define _LIBALL_POOL
 
 //#include <SFML/Audio.h>
-    #include <SFML/Graphics.h>
+#include <SFML/Graphics.h>
 //#include <SFML/Graphics/Vertex.h>
 //#include <SFML/System.h>
 //#include <SFML/Window.h>
 //#include <math.h>
 //#include <stdio.h>
 //#include <stdlib.h>
-    #include "defender.h"
-    #include "struct.h"
+#include "defender.h"
+#include "struct.h"
 
 static const int ERROR_VALUE = 84;
 static const int END_VALUE = 0;
@@ -85,6 +85,7 @@ void move_map_four(int *nb, int *sec, map_t *map, int *old_pos);
 void mover_charter_bis(sfVector2f *pos, float x, float y);
 void move_charter_tree(float *nb, int *sec, game_t *game, sfVector2f *pos);
 
+void open_chest(sfRenderWindow *window, game_t *game);
 void interaction_pnj1(sfRenderWindow *window, game_t *game);
 void interaction_pnj2(sfRenderWindow *window, game_t *game);
 void interaction_pnj3(sfRenderWindow *window, game_t *game);
