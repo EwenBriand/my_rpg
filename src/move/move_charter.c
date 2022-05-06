@@ -11,35 +11,21 @@
 void move_charter(sfRenderWindow *window, game_t *game, float x, float y)
 {
     sfVector2f pos = sfSprite_getPosition(game->charter->sprite->sprite);
-    int time = 0;
+    float nb[3] = {0, x, y};
     int sec = 1;
     int i = 1;
     int type = 0;
 
     sfClock_restart(game->clock);
     while (pos.x != x || pos.y != y) {
-        time = sfClock_getElapsedTime(game->clock).microseconds / 10000.0;
-        if (time < 1 * sec) {
-            sfSprite_setPosition(
-                game->charter->sprite->sprite, (sfVector2f){pos.x, pos.y});
-        } else if (time >= 1 * sec) {
-            if (pos.x < x)
-                pos.x += 2;
-            if (pos.x > x)
-                pos.x -= 2;
-            if (pos.y < y)
-                pos.y += 2;
-            if (pos.y > y)
-                pos.y -= 2;
-            ++sec;
-        }
-        if (time < 8 * i)
+        nb[0] = sfClock_getElapsedTime(game->clock).microseconds / 10000.0;
+        move_charter_tree(nb, &sec, game, &pos);
+        if (nb[0] < 8 * i)
             change_charter(game, type);
-        else if (time >= 8 * i) {
+        else if (nb[0] >= 8 * i) {
             ++i;
             ++type;
-            if (type == 8)
-                type = 0;
+            type = move_map_tree(type);
         }
         draw_map(window, game);
         sfRenderWindow_display(window);

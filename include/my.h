@@ -78,6 +78,13 @@ void move_map(map_t *map, sfRenderWindow *window, game_t *game);
 void move_map_vert(map_t *map, sfRenderWindow *window, game_t *game);
 void move_map_hor(map_t *map, sfRenderWindow *window, game_t *game);
 
+void change_charter_tree(game_t *game, int type);
+void move_map_bis(map_t *map, int *old_pos, int x);
+int move_map_tree(int type);
+void move_map_four(int *nb, int *sec, map_t *map, int *old_pos);
+void mover_charter_bis(sfVector2f *pos, float x, float y);
+void move_charter_tree(float *nb, int *sec, game_t *game, sfVector2f *pos);
+
 void interaction_pnj1(sfRenderWindow *window, game_t *game);
 void interaction_pnj2(sfRenderWindow *window, game_t *game);
 void interaction_pnj3(sfRenderWindow *window, game_t *game);

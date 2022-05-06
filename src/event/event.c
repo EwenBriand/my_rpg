@@ -79,10 +79,6 @@ void my_event(sfRenderWindow *window, game_t *game)
             move_vertical(game, event);
             move_horizontal(game, event);
             interaction(window, game, event);
-            if (event.key.code == sfKeyF) { // a degager a la fin
-                add_object_in_inv(game, "faux", 1);
-                game->all_pnj[1]->nb_obj = 5;
-            }
         }
         if (sfKeyboard_isKeyPressed(sfKeyEscape))
             pause_menu(window, game);

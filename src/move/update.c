@@ -12,13 +12,11 @@ void update_charter(game_t *game)
 {
     sfSprite_setRotation(
         game->charter->sprite->sprite, game->charter->rota * 90);
-
     if (game->charter->rota == 0) {
         sfSprite_setPosition(game->charter->sprite->sprite,
             (sfVector2f){1920 / 2 - 100 + game->charter->exep[0],
                 1080 / 2 - 70 + game->charter->exep[1]});
-    }
-    if (game->charter->rota == 1) {
+    } else if (game->charter->rota == 1) {
         sfSprite_setPosition(game->charter->sprite->sprite,
             (sfVector2f){1920 / 2 - 100 + 80 + game->charter->exep[0],
                 game->charter->exep[1] + 1080 / 2 - 70 - 20});
@@ -27,8 +25,7 @@ void update_charter(game_t *game)
         sfSprite_setPosition(game->charter->sprite->sprite,
             (sfVector2f){1920 / 2 - 100 + 90 + game->charter->exep[0],
                 game->charter->exep[1] + 1080 / 2 - 70 + 60});
-    }
-    if (game->charter->rota == 3) {
+    } else if (game->charter->rota == 3) {
         sfSprite_setPosition(game->charter->sprite->sprite,
             (sfVector2f){1920 / 2 - 100 + game->charter->exep[0],
                 game->charter->exep[1] + 1080 / 2 - 70 + 75});
@@ -54,5 +51,28 @@ void update_map(map_t *map, sfRenderWindow *window, game_t *game)
             return move_map_vert(map, window, game);
         if (type == 2)
             return move_map_hor(map, window, game);
+    }
+}
+
+void mover_charter_bis(sfVector2f *pos, float x, float y)
+{
+    if (pos->x < x)
+        pos->x += 2;
+    if (pos->x > x)
+        pos->x -= 2;
+    if (pos->y < y)
+        pos->y += 2;
+    if (pos->y > y)
+        pos->y -= 2;
+}
+
+void move_charter_tree(float *nb, int *sec, game_t *game, sfVector2f *pos)
+{
+    if (nb[0] < 1 * *sec) {
+        sfSprite_setPosition(
+                game->charter->sprite->sprite, (sfVector2f){pos->x, pos->y});
+    } else if (nb[0] >= 1 * *sec) {
+        mover_charter_bis(pos, nb[1], nb[2]);
+        ++*sec;
     }
 }

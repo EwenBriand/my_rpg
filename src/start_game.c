@@ -16,7 +16,6 @@ void make_code_map(sfRenderWindow *window, game_t *game)
     int nb_mob = rand() % 6 + 1;
     int code = game->map->map[game->charter->pos[0]][game->charter->pos[1]];
 
-    printf("fight %i %i %i\n", game->nb_fight, nb_mob, game->perso->stat->pv);
     if (code == 3 || code == 4 || code == 5 || code == 10)
         if (game->nb_fight == 2) {
             game->nb_fight = 0;
@@ -42,14 +41,6 @@ void my_game(sfRenderWindow *window, game_t *game)
             update_map(game->map, window, game);
             make_code_map(window, game);
             game->state = 0;
-            // a degager a la fin
-            printf("%d %d\nok %d %d\n", game->charter->pos[0],
-                game->charter->pos[1], game->perso->xp, game->perso->xp_supp);
-            for (int i = 0; game->perso->inv->inv[i] != NULL; ++i)
-                printf("%s %d\n", game->perso->inv->inv[i]->name,
-                    game->perso->inv->inv[i]->stack);
-            printf("credits: %i\n", game->perso->credits);
-            //
         }
         level_up(window, game);
     }
