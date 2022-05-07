@@ -70,6 +70,7 @@ SRC	=	src/init_all/init_game.c	\
 		src/interaction/open_chest.c \
 		src/inventaire/open_inv.c \
 		src/event/event_the_end.c \
+		src/the_beg/tel_the_story.c \
 
 OBJ	=	$(SRC:.c=.o)
 

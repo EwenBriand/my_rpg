@@ -9,7 +9,7 @@
 
 int phy_dmg_deal(game_t *game)
 {
-    int dmg = game->perso->stat->att_phy;
+    int dmg = game->perso->stat->att_phy + game->perso->bucheron;
     if (game->perso->equip->foot != NULL)
         dmg += game->perso->equip->foot->stat->att_phy;
     if (game->perso->equip->weapon != NULL)
@@ -22,7 +22,7 @@ int phy_dmg_deal(game_t *game)
 
 int mag_dmg_deal(game_t *game)
 {
-    int dmg = game->perso->stat->att_ma;
+    int dmg = game->perso->stat->att_ma + game->perso->druide;
     if (game->perso->equip->shoulder != NULL)
         dmg += game->perso->equip->shoulder->stat->att_ma;
     if (game->perso->equip->weapon != NULL)

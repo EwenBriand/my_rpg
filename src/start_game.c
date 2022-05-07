@@ -64,6 +64,7 @@ int start_game(sfRenderWindow *window)
     sfRenderWindow_setTitle(window, "OASIS");
     sfRenderWindow_setFramerateLimit(window, 200);
     sfRenderWindow_clear(window, sfBlack);
+    tel_the_story(window);
     my_game(window, game);
     destroy_game(game);
     sfRenderWindow_close(window);

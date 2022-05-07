@@ -11,8 +11,8 @@
 //#include <SFML/Audio.h>
 #include <SFML/Graphics.h>
 //#include <SFML/Graphics/Vertex.h>
-//#include <SFML/System.h>
-//#include <SFML/Window.h>
+#include <SFML/System.h>
+#include <SFML/Window.h>
 //#include <math.h>
 //#include <stdio.h>
 //#include <stdlib.h>
@@ -153,6 +153,8 @@ void print_turn_result(sfRenderWindow *window, game_t *game);
 void my_fight(sfRenderWindow *window, game_t *game, int nb_mobs);
 void event_fight_result(sfRenderWindow *window, game_t *game, int *status);
 void draw_fight_scene(sfRenderWindow *window, game_t *game, int draw_or_not);
+
+void tel_the_story(sfRenderWindow *window);
 
 // INVENTAIRE
 

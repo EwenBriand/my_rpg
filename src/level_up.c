@@ -14,7 +14,7 @@ static void leveling_up(game_t *game)
     game->perso->xp -= game->perso->xp_supp;
     game->perso->xp_supp += 20;
     game->perso->stat->pv_max += 10;
-    game->perso->stat->pv += 10;
+    game->perso->stat->pv = game->perso->stat->pv_max;
     game->perso->stat->att_phy += 2;
     game->perso->stat->def_phy += 2;
     game->perso->stat->att_ma += 2;
