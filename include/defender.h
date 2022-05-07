@@ -38,15 +38,6 @@ typedef struct option_btn_s {
     int pb_pos_y;
 } option_btn_t;
 
-typedef struct how_play_btn_s {
-    sfTexture *play_b;
-    sfSprite *play_sprite;
-    sfVector2f play_b_pos;
-    sfVector2f play_b_scale;
-    int pb_pos_x;
-    int pb_pos_y;
-} how_play_btn_t;
-
 typedef struct mouse_poss_s {
     sfEvent event;
     sfVector2i mouse_poss;

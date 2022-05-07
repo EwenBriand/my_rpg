@@ -35,12 +35,10 @@ void display_image(window_t *var_wind, sfSprite *sprite, int *status)
     play_btn_t *var = button();
     exit_btn_t *exite = exit_btn();
     option_btn_t *option = option_btn();
-    how_play_btn_t *htp = how_play_btn();
     while (sfRenderWindow_isOpen(var_wind->window) && *status == 0) {
         display_all(
             var_wind->window, sprite, exite->play_sprite, option->play_sprite);
         sfRenderWindow_drawSprite(var_wind->window, var->play_sprite, NULL);
-        sfRenderWindow_drawSprite(var_wind->window, htp->play_sprite, NULL);
         menu_event(var_wind, status, var, exite);
         sfRenderWindow_display(var_wind->window);
     }

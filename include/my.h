@@ -133,7 +133,6 @@ play_btn_t *button(void);
 exit_btn_t *exit_btn(void);
 void display_image(window_t *var_wind, sfSprite *sprite, int *status);
 option_btn_t *option_btn(void);
-how_play_btn_t *how_play_btn(void);
 void get_poss_mouse(window_t *var_wind);
 int clickable_btn(
     window_t *window, play_btn_t *var, exit_btn_t *exite, int status);

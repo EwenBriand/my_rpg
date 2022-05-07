@@ -36,7 +36,7 @@ exit_btn_t *exit_btn(void)
     var->play_b = sfTexture_createFromFile("ressources/btn_exit.png", NULL);
     var->play_sprite = sfSprite_create();
     sfSprite_setTexture(var->play_sprite, var->play_b, sfFalse);
-    var->pb_pos_x = 250;
+    var->pb_pos_x = 1420;
     var->pb_pos_y = 450;
     var->play_b_pos.x = var->pb_pos_x;
     var->play_b_pos.y = var->pb_pos_y;
@@ -58,26 +58,6 @@ option_btn_t *option_btn(void)
     sfSprite_setTexture(var->play_sprite, var->play_b, sfFalse);
     var->pb_pos_x = 1010 - 120;
     var->pb_pos_y = 665;
-    var->play_b_pos.x = var->pb_pos_x;
-    var->play_b_pos.y = var->pb_pos_y;
-    var->play_b_scale.x = 6.5;
-    var->play_b_scale.y = 6.5;
-    sfSprite_setPosition(var->play_sprite, var->play_b_pos);
-    sfSprite_setScale(var->play_sprite, var->play_b_scale);
-    how_play_btn();
-    return var;
-}
-
-how_play_btn_t *how_play_btn(void)
-{
-    how_play_btn_t *var = malloc(sizeof(how_play_btn_t));
-    if (var == NULL)
-        return NULL;
-    var->play_b = sfTexture_createFromFile("ressources/btn_load.png", NULL);
-    var->play_sprite = sfSprite_create();
-    sfSprite_setTexture(var->play_sprite, var->play_b, sfFalse);
-    var->pb_pos_x = 1420;
-    var->pb_pos_y = 450;
     var->play_b_pos.x = var->pb_pos_x;
     var->play_b_pos.y = var->pb_pos_y;
     var->play_b_scale.x = 6.5;
