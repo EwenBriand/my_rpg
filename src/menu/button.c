@@ -14,7 +14,7 @@ play_btn_t *button(void)
     play_btn_t *var = malloc(sizeof(play_btn_t));
     if (var == NULL)
         return NULL;
-    var->play_b = sfTexture_createFromFile("ressources/btn_new.png", NULL);
+    var->play_b = sfTexture_createFromFile("ressources/btn_play.png", NULL);
     var->play_sprite = sfSprite_create();
     sfSprite_setTexture(var->play_sprite, var->play_b, sfFalse);
     var->pb_pos_x = 830;
@@ -33,7 +33,7 @@ exit_btn_t *exit_btn(void)
     exit_btn_t *var = malloc(sizeof(exit_btn_t));
     if (var == NULL)
         return NULL;
-    var->play_b = sfTexture_createFromFile("ressources/btn_quit.png", NULL);
+    var->play_b = sfTexture_createFromFile("ressources/btn_exit.png", NULL);
     var->play_sprite = sfSprite_create();
     sfSprite_setTexture(var->play_sprite, var->play_b, sfFalse);
     var->pb_pos_x = 250;
