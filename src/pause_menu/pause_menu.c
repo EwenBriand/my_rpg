@@ -61,12 +61,10 @@ static void event_pause_menu(sfRenderWindow *window, game_t *game, int *status)
 void pause_menu(sfRenderWindow *window, game_t *game)
 {
     int status = 0;
+    sfRenderWindow_drawSprite(window, game->resume_btn->sprite, NULL);
+    sfRenderWindow_drawSprite(window, game->quit_btn->sprite, NULL);
+    sfRenderWindow_display(window);
 
-    while (sfRenderWindow_isOpen(window) && status == 0) {
-        draw_map(window, game);
-        sfRenderWindow_drawSprite(window, game->resume_btn->sprite, NULL);
-        sfRenderWindow_drawSprite(window, game->quit_btn->sprite, NULL);
-        sfRenderWindow_display(window);
+    while (sfRenderWindow_isOpen(window) && status == 0)
         event_pause_menu(window, game, &status);
-    }
 }

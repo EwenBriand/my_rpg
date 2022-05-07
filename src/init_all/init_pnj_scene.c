@@ -6,14 +6,14 @@
 */
 
 #include "../../include/my.h"
-#include "stdlib.h"
 #include "SFML/Graphics.h"
+#include "stdlib.h"
 
 pnj_scene_t *init_pnj_scene(void)
 {
     pnj_scene_t *pnj_scene = malloc(sizeof(pnj_scene_t));
     pnj_scene->textbox = create_sprite(
-        "sprites/dialogue2.png", (int[4]){0, 0, 920, 244}, (int[2]){550, 750});
+        "sprites/dialogue2.png", (int[4]){0, 0, 920, 244}, (int[2]){550, 765});
     pnj_scene->name = sfText_create();
     pnj_scene->replique = sfText_create();
     pnj_scene->font = sfFont_createFromFile("fonts/pixelart.TTF");

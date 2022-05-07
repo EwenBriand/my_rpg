@@ -38,7 +38,7 @@ static void creat_equip(objet_t **objects)
     objects[5] = creat_object("casque de linitier", 0, empty_stat());
     objects[5]->stat->def_phy = 1;
     objects[4] = creat_object("armure de linitier", 0, empty_stat());
-    objects[4]->stat->def_phy = 1;
+    objects[4]->stat->def_phy = 3;
     objects[6] = creat_object("gants de linitier", 0, empty_stat());
     objects[6]->stat->att_ma = 1;
     objects[9] = creat_object("epaulettes de linitier", 0, empty_stat());

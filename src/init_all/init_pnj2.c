@@ -21,8 +21,8 @@ static void init_replique(pnj_t *pnj)
     pnj->replique[4] = "Bandits broke into my house\nand stole my "
                        "scythe.\nCan you find it for me?";
     pnj->replique[5] =
-        "Did you find it?\nI understand that your\nship has exploded?\nI can "
-        "accommodate you while you wait if you want";
+        "Did you find it?\nI understand that your ship has exploded?\nI can "
+        "accommodate you\nwhile you wait if you want";
     pnj->replique[6] = NULL;
 }
 
