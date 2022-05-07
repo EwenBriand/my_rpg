@@ -26,15 +26,23 @@ void make_code_map(sfRenderWindow *window, game_t *game)
         change_map(window, game, code);
 }
 
+void chose_state(sfRenderWindow *window, game_t *game, int state)
+{
+    if (state == 666)
+        open_shop(window, game);
+    else
+        open_inventory(window, game);
+}
+
 void my_game(sfRenderWindow *window, game_t *game)
 {
     while (sfRenderWindow_isOpen(window) && game->state != 1) {
         if (game->state == 0)
             draw_map(window, game);
         sfRenderWindow_display(window);
-        if (game->state == 666) {
-            open_shop(window, game);
-        } else if (game->state != 2)
+        if (game->state == 666 || game->state == 667)
+            chose_state(window, game, game->state);
+        else if (game->state != 2)
             my_event(window, game);
         else {
             update_charter(game);

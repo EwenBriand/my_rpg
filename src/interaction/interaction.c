@@ -21,4 +21,6 @@ void interaction(sfRenderWindow *window, game_t *game, sfEvent event)
     if (event.key.code == sfKeyV) {
         del_object_in_inv(game, "bois", 10);
     }
+    if (event.key.code == sfKeyE)
+        game->state = 667;
 }

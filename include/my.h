@@ -123,6 +123,8 @@ void display_button(
     sfRenderWindow *window, sfVector2i mouse, shop_t *shop, game_t *game);
 void display_color(
     sfRenderWindow *window, shop_t *shop, sprite_t color, int i);
+void check_close(sfRenderWindow *window, game_t *game);
+char *itoa(int nbr);
 
 // MENU
 void open_window(window_t *var_wind);
@@ -150,5 +152,9 @@ void print_turn_result(sfRenderWindow *window, game_t *game);
 void my_fight(sfRenderWindow *window, game_t *game, int nb_mobs);
 void event_fight_result(sfRenderWindow *window, game_t *game, int *status);
 void draw_fight_scene(sfRenderWindow *window, game_t *game, int draw_or_not);
+
+// INVENTAIRE
+
+void open_inventory(sfRenderWindow *window, game_t *game);
 
 #endif
