@@ -5,25 +5,24 @@
 ** init_pnj2
 */
 
-#include "stdlib.h"
 #include "../../include/my.h"
+#include "stdlib.h"
 
 static void init_replique(pnj_t *pnj)
 {
     pnj->replique = malloc(sizeof(char *) * 7);
-    pnj->replique[0] =
-        "J'ai tellement faim,\nje reverrais d'avoir des baies !";
-    pnj->replique[1] = "C'est pour moi ?\nMERCI !! tiens c'est pas grand "
-        "chose\nmais c'est toujours mieux que rien";
-    pnj->replique[2] = "Ces Taupes me rendent dingues !!!!\nPeux tu en tuer "
-        "quelqu'un pour moi?";
+    pnj->replique[0] = "I'm so hungry,\nI dream of having berries!";
+    pnj->replique[1] = "Is it for me?\nTHANK YOU!! hey it's not a big"
+                       "deal\nbut it's still better than nothing";
+    pnj->replique[2] =
+        "These snakes are driving me crazy!!!!\nCan you kill someone for me?";
     pnj->replique[3] =
-        "Merci beaucoup et comme on dis\ntout travail merite salaire";
-    pnj->replique[4] = "Des bandits se sont introduit chez moi\net m'ont "
-        "derober ma faux.\nPeux-tu me la retrouver ?";
+        "Thank you very much and as we say\nall work deserves salary";
+    pnj->replique[4] = "Bandits broke into my house\nand stole my "
+                       "scythe.\nCan you find it for me?";
     pnj->replique[5] =
-        "Tu l'as retrouver ?\nJ'ai crus comprendre que ton\nvaisseau avais "
-        "exploser ?\nje peux t'eberger en attendant si tu veux";
+        "Did you find it?\nI understand that your\nship has exploded?\nI can "
+        "accommodate you while you wait if you want";
     pnj->replique[6] = NULL;
 }
 

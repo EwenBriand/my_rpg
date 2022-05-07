@@ -23,7 +23,7 @@ void player_turn(sfRenderWindow *window, game_t *game)
         my_strcat("HP PLAYER  ", my_int_to_str(game->perso->stat->pv));
     char *pv_ennemi = my_strcat("HP ENEMY  ",
         my_int_to_str(game->fight->enemy[game->mobs]->stats->pv));
-    game->fight->string = "Tour du joueur\n";
+    game->fight->string = "Player turn\n";
 
     sfText_setPosition(game->fight->hp, (sfVector2f){100, 200});
     draw_some_sprite(window, game);

@@ -57,13 +57,13 @@ char *my_int_to_str(int nb)
 static void change_string(game_t *game, int dmg)
 {
     char *temp;
-    game->fight->string = "Vous avez pris ";
+    game->fight->string = "You have taken ";
     temp = my_strcat(game->fight->string, my_int_to_str(dmg));
-    game->fight->string = my_strcat(temp, " degat\n");
+    game->fight->string = my_strcat(temp, " damage\n");
     free(temp);
     temp = game->fight->string;
     if (game->fight->venin == 1)
-        game->fight->string = my_strcat(temp, "Vous etes empoisonne\n");
+        game->fight->string = my_strcat(temp, "You are poisoned\n");
     sfText_setString(game->fight->text, game->fight->string);
     free(temp);
 }

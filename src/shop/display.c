@@ -8,6 +8,47 @@
 #include "../../include/my.h"
 #include "SFML/Graphics.h"
 
+static void auto_equiped_sec(game_t *game, shop_t *shop, int nbr)
+{
+    if (my_strcmp(shop->items_shop[nbr].name, "epaulettes de linitier") == 0) {
+        game->perso->equip->shoulder = game->all_objets[3];
+        del_object_in_inv(game, shop->items_shop[nbr].name, 1);
+    }
+    if (my_strcmp(shop->items_shop[nbr].name, "jambiere de linitier") == 0) {
+        game->perso->equip->leg = game->all_objets[8];
+        del_object_in_inv(game, shop->items_shop[nbr].name, 1);
+    }
+    if (my_strcmp(shop->items_shop[nbr].name, "bottes de linitier") == 0) {
+        game->perso->equip->foot = game->all_objets[7];
+        del_object_in_inv(game, shop->items_shop[nbr].name, 1);
+    }
+    if (my_strcmp(shop->items_shop[nbr].name, "collier de linitier") == 0) {
+        game->perso->equip->neck = game->all_objets[10];
+        del_object_in_inv(game, shop->items_shop[nbr].name, 1);
+    }
+}
+
+static void auto_equiped(game_t *game, shop_t *shop, int nbr)
+{
+    if (my_strcmp(shop->items_shop[nbr].name, "epee de linitier") == 0) {
+        game->perso->equip->weapon = game->all_objets[3];
+        del_object_in_inv(game, shop->items_shop[nbr].name, 1);
+    }
+    if (my_strcmp(shop->items_shop[nbr].name, "casque de linitier") == 0) {
+        game->perso->equip->head = game->all_objets[5];
+        del_object_in_inv(game, shop->items_shop[nbr].name, 1);
+    }
+    if (my_strcmp(shop->items_shop[nbr].name, "armure de linitier") == 0) {
+        game->perso->equip->body = game->all_objets[4];
+        del_object_in_inv(game, shop->items_shop[nbr].name, 1);
+    }
+    if (my_strcmp(shop->items_shop[nbr].name, "gants de linitier") == 0) {
+        game->perso->equip->gauntlet = game->all_objets[6];
+        del_object_in_inv(game, shop->items_shop[nbr].name, 1);
+    }
+    auto_equiped_sec(game, shop, nbr);
+}
+
 void check_buy(
     sfRenderWindow *window, shop_t *shop, const int nbrs[5], game_t *game)
 {
@@ -21,6 +62,7 @@ void check_buy(
         if (shop->seconds2 > 1) {
             game->perso->credits -= shop->items_shop[nbrs[0]].prize;
             add_object_in_inv(game, shop->items_shop[nbrs[0]].name, 1);
+            auto_equiped(game, shop, nbrs[0]);
         }
     }
 }

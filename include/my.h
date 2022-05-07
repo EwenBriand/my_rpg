@@ -61,6 +61,7 @@ sprite_t *create_sprite(char *path, int *p, int *position);
 sfIntRect *create_rect(int top, int left, int width, int height);
 map_t *create_map(char *path, int *pos, char *path_int);
 
+void event_the_end(sfRenderWindow *window, game_t *game);
 void my_event(sfRenderWindow *window, game_t *game);
 void event_pnj_scene(sfRenderWindow *window, game_t *game);
 

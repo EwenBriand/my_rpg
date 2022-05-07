@@ -34,11 +34,17 @@ void create_pause_button(game_t *game)
     pos[0] = 1920 / 2 - 170;
     pos[1] = 1080 / 2 - 250;
     game->resume_btn = create_sprite("ressources/resume.png", rect, pos);
+    pos[0] = 0;
+    pos[1] = 0;
+    rect[2] = 400;
+    rect[3] = 400;
+    game->the_end = create_sprite("sprites/end.png", rect, pos);
     pos[0] = 1920 / 2 - 170;
     pos[1] = 1080 / 2 + 100;
     game->quit_btn = create_sprite("ressources/btn_quit.png", rect, pos);
     sfSprite_setScale(game->resume_btn->sprite, (sfVector2f){8, 8});
     sfSprite_setScale(game->quit_btn->sprite, (sfVector2f){8, 8});
+    sfSprite_setScale(game->the_end->sprite, (sfVector2f){6, 4});
     free(pos);
 }
 

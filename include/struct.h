@@ -13,7 +13,6 @@
 //#include <SFML/System.h>
 //#include <SFML/Window.h>
 
-
 /*
  * xp -> game->perso->xp (int)
  * niv sup xp -> game->perso->xp_supp (int)
@@ -185,6 +184,7 @@ typedef struct fight_s {
 } fight_t;
 
 typedef struct game_s {
+    sprite_t *the_end;
     sprite_t *resume_btn;
     sprite_t *quit_btn;
     pnj_t **all_pnj;

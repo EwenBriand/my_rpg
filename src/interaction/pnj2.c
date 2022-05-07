@@ -23,6 +23,14 @@ static void while_loop_pnj2(sfRenderWindow *window, game_t *game)
         sfRenderWindow_display(window);
         event_pnj_scene(window, game);
     }
+    if (game->all_pnj[1]->avancement == game->all_pnj[1]->finish - 1) {
+        game->state = 0;
+        sfRenderWindow_clear(window, sfBlack);
+        sfRenderWindow_drawSprite(window, game->the_end->sprite, NULL);
+        sfRenderWindow_display(window);
+        while (game->state != 1)
+            event_the_end(window, game);
+    }
 }
 
 static void sec_quest(sfRenderWindow *window, game_t *game)

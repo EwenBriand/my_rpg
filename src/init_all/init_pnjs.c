@@ -5,8 +5,8 @@
 ** init_pnjs
 */
 
-#include "stdlib.h"
 #include "../../include/my.h"
+#include "stdlib.h"
 
 static pnj_t *init_pnj1(void)
 {
@@ -18,10 +18,10 @@ static pnj_t *init_pnj1(void)
     pnj->credits = 10;
     pnj->xp = 30;
     pnj->replique = malloc(sizeof(char *) * 3);
-    pnj->replique[0] = "Eh toi, si tu me trouve de la poudre a canon\nje suis "
-        "pret a te l'acheter a bon prix...";
-    pnj->replique[1] = "ENFIN je vais pouvoir... euuh...\narreter de creuser. "
-        "Voici ton argent";
+    pnj->replique[0] = "Hey you,\nif you find some gunpowder\nI'm ready to "
+                       "buy it from you at a good price...";
+    pnj->replique[1] =
+        "FINALLY I will be able to... uh...\nstop digging. Here is your money";
     pnj->replique[2] = NULL;
     pnj->obj = "poudre a canon";
     pnj->nb_obj = 1;
@@ -39,10 +39,10 @@ static pnj_t *init_pnj3(void)
     pnj->credits = 350;
     pnj->xp = 0;
     pnj->replique = malloc(sizeof(char *) * 3);
-    pnj->replique[0] = "Dans les jeux videos comme dans l'Oasis, un\n"
-        "aventurier se doit d'etre bien equipe.";
+    pnj->replique[0] = "In video games as in the Oasis, a\n"
+                       "adventurer must be well equipped.";
     pnj->replique[1] =
-        "On dirais le debut d'une aventure\ndigne de ce bon vieux Gary";
+        "Looks like the start of an\nadventure worthy of good old Gary";
     pnj->replique[2] = NULL;
     pnj->type = 3;
     return (pnj);
@@ -59,9 +59,9 @@ static pnj_t *init_pnj4(void)
     pnj->xp = 0;
     pnj->replique = malloc(sizeof(char *) * 3);
     pnj->replique[0] =
-        "Je recherche du venin pour euh...\nt'as pas besoin de le savoir.";
-    pnj->replique[1] =
-        "Merci beaucoup, j'espere que\ntu aimes pas beaucoup le banquier...";
+        "I'm looking for venom for uh...\nyou don't need to know.";
+    pnj->replique[1] = "Thank you very much, I hope that\nyou don't like the\n"
+                       "banker too much...";
     pnj->replique[2] = NULL;
     pnj->obj = "venin";
     pnj->nb_obj = 1;
@@ -79,10 +79,9 @@ static pnj_t *init_pnj5(void)
     pnj->credits = 30;
     pnj->xp = 5;
     pnj->replique = malloc(sizeof(char *) * 3);
-    pnj->replique[0] =
-        "Quelqu'un as fait exploser le mur,\ntu aurrais pas un peux de bois?";
+    pnj->replique[0] = "Someone blew up the wall,\ndo you have a can of wood?";
     pnj->replique[1] =
-        "Bon c'est suffisant pour tenir le temps\nde refaire un mur en Pierre";
+        "Well, that's enough to take the\ntime to redo a stone wall";
     pnj->replique[2] = NULL;
     pnj->obj = "bois";
     pnj->nb_obj = 10;

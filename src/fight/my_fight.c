@@ -12,12 +12,13 @@ static void print_result(game_t *game, sfRenderWindow *window, int nb_mob)
     int status = 0;
 
     if (game->perso->stat->pv <= 0)
-        game->fight->string = "Vous etes au porte de la mort\n";
+        game->fight->string = "You are at death's door\n";
     else {
-        game->fight->string = "Vous avez vaincu l'ennemi\n il vous reste ";
+        game->fight->string = "You have defeated the enemy\nyou have ";
         game->fight->string =
             my_strcat(game->fight->string, my_int_to_str(nb_mob));
-        game->fight->string = my_strcat(game->fight->string, " ennemis\n");
+        game->fight->string =
+            my_strcat(game->fight->string, " enemies left\n");
     }
     sfText_setString(game->fight->text, game->fight->string);
     while (sfRenderWindow_isOpen(window) && status == 0) {
