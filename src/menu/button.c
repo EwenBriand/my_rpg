@@ -17,7 +17,7 @@ play_btn_t *button(void)
     var->play_b = sfTexture_createFromFile("ressources/btn_play.png", NULL);
     var->play_sprite = sfSprite_create();
     sfSprite_setTexture(var->play_sprite, var->play_b, sfFalse);
-    var->pb_pos_x = 830;
+    var->pb_pos_x = 630;
     var->pb_pos_y = 450;
     var->play_b_pos.x = var->pb_pos_x;
     var->play_b_pos.y = var->pb_pos_y;
@@ -36,7 +36,7 @@ exit_btn_t *exit_btn(void)
     var->play_b = sfTexture_createFromFile("ressources/btn_exit.png", NULL);
     var->play_sprite = sfSprite_create();
     sfSprite_setTexture(var->play_sprite, var->play_b, sfFalse);
-    var->pb_pos_x = 1420;
+    var->pb_pos_x = 1020;
     var->pb_pos_y = 450;
     var->play_b_pos.x = var->pb_pos_x;
     var->play_b_pos.y = var->pb_pos_y;
