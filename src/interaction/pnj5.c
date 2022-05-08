@@ -6,8 +6,8 @@
 */
 
 #include "../../include/my.h"
-#include "SFML/Graphics.h"
 #include "SFML/Audio.h"
+#include "SFML/Graphics.h"
 
 static void while_loop_pnj5(sfRenderWindow *window, game_t *game)
 {

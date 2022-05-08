@@ -5,8 +5,8 @@
 ** destroy_perso
 */
 
-#include "stdlib.h"
 #include "../../include/my.h"
+#include "stdlib.h"
 
 void destroy_perso(personnage_t *perso)
 {

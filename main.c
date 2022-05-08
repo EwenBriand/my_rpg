@@ -35,13 +35,19 @@ void display_image(window_t *var_wind, sfSprite *sprite, int *status)
     play_btn_t *var = button();
     exit_btn_t *exite = exit_btn();
     option_btn_t *option = option_btn();
+    sfText *text = sfText_create();
+    sfFont *font = sfFont_createFromFile("fonts/pixelart.TTF");
+    setup_text_menu(text, font);
     while (sfRenderWindow_isOpen(var_wind->window) && *status == 0) {
         display_all(
             var_wind->window, sprite, exite->play_sprite, option->play_sprite);
         sfRenderWindow_drawSprite(var_wind->window, var->play_sprite, NULL);
         menu_event(var_wind, status, var, exite);
+        sfRenderWindow_drawText(var_wind->window, text, NULL);
         sfRenderWindow_display(var_wind->window);
     }
+    sfText_destroy(text);
+    sfFont_destroy(font);
 }
 
 void open_window(window_t *var_wind)

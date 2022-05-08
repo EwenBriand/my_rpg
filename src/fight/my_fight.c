@@ -63,6 +63,7 @@ static void is_win(game_t *game, int nb_mobs)
         game->all_pnj[1]->nb_obj += nb_mobs;
 
     add_object_in_inv(game, "venin", nb_mobs);
+    game->perso->xp += nb_mobs * 5;
 }
 
 void my_fight(sfRenderWindow *window, game_t *game, int nb_mobs)
@@ -70,8 +71,10 @@ void my_fight(sfRenderWindow *window, game_t *game, int nb_mobs)
     if (start_fight(window, game, nb_mobs) == 0) {
         if (game->mobs == 0)
             is_win(game, nb_mobs);
-        else if (game->mobs == 1)
+        else if (game->mobs == 1) {
             add_object_in_inv(game, "poudre a canon", nb_mobs);
+            game->perso->xp += nb_mobs * 5;
+        }
     } else {
         game->perso->xp = 0;
         game->perso->stat->pv = 1;

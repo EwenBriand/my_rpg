@@ -5,8 +5,8 @@
 ** destroy_objet
 */
 
-#include "stdlib.h"
 #include "../../include/my.h"
+#include "stdlib.h"
 
 void destroy_objet(objet_t **objet)
 {

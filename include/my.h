@@ -51,10 +51,13 @@ game_t *creat_my_game(void);
 void init_text(game_t *game);
 void init_fight(game_t *game);
 personnage_t *init_perso(void);
+void init_minimap(game_t *game);
 void create_slash(game_t *game);
 objet_t **init_all_objects(void);
 pnj_scene_t *init_pnj_scene(void);
+void init_bestiaire(game_t *game);
 sfVertexArray **init_all_array(void);
+void setup_text_menu(sfText *text, sfFont *font);
 charter_t *create_charter(char *path, int *pos);
 void my_slash(sfRenderWindow *window, game_t *game);
 sprite_t *create_sprite(char *path, int *p, int *position);
@@ -114,7 +117,6 @@ void destroy_charter(charter_t *charter);
 void destroy_pnj_scene(pnj_scene_t *pnj_scene);
 void destroy_particule(sfVertexArray **particule);
 
-// SHOP
 void init_shop(game_t *game);
 void open_shop(sfRenderWindow *window, game_t *game);
 void create_sprite_coins(shop_t *shop);
@@ -127,7 +129,6 @@ void display_color(
 void check_close(sfRenderWindow *window, game_t *game);
 char *itoa(int nbr);
 
-// MENU
 void open_window(window_t *var_wind);
 play_btn_t *button(void);
 exit_btn_t *exit_btn(void);
@@ -155,7 +156,8 @@ void draw_fight_scene(sfRenderWindow *window, game_t *game, int draw_or_not);
 
 void tel_the_story(sfRenderWindow *window);
 
-// INVENTAIRE
+void open_minimap(sfRenderWindow *window, game_t *game);
+void open_bestiaire(sfRenderWindow *window, game_t *game);
 
 void open_inventory(sfRenderWindow *window, game_t *game);
 

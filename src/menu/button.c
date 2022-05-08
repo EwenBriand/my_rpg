@@ -66,3 +66,15 @@ option_btn_t *option_btn(void)
     sfSprite_setScale(var->play_sprite, var->play_b_scale);
     return var;
 }
+
+void setup_text_menu(sfText *text, sfFont *font)
+{
+    sfText_setFont(text, font);
+    sfText_setString(text,
+        "Z go up\n\nS go down\n\nQ go left\n\nD go right\n\nB to open "
+        "bestary\n\nE to open inventory\n\nI to interact with the map\n\nM to "
+        "open minimap\n\nPress ESC to exit\n\n\n\nIn Fight\n\n\nA use "
+        "antidote\n\nP use potion\n\nL magic attack\n\nF physique attack\n\n");
+    sfText_setPosition(text, (sfVector2f){80, 80});
+    sfText_setColor(text, sfBlack);
+}

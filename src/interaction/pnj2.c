@@ -9,6 +9,14 @@
 #include "SFML/Audio.h"
 #include "SFML/Graphics.h"
 
+static void draw_something(sfRenderWindow *window, game_t *game)
+{
+    sfRenderWindow_drawSprite(window, game->pnj_scene->textbox->sprite, NULL);
+    sfRenderWindow_drawText(window, game->pnj_scene->name, NULL);
+    sfRenderWindow_drawText(window, game->pnj_scene->replique, NULL);
+    sfRenderWindow_display(window);
+}
+
 static void while_loop_pnj2(sfRenderWindow *window, game_t *game)
 {
     sfText_setString(game->pnj_scene->name, game->all_pnj[1]->name);
@@ -16,11 +24,7 @@ static void while_loop_pnj2(sfRenderWindow *window, game_t *game)
         game->all_pnj[1]->replique[game->all_pnj[1]->avancement]);
     while (game->state == 3) {
         draw_map(window, game);
-        sfRenderWindow_drawSprite(
-            window, game->pnj_scene->textbox->sprite, NULL);
-        sfRenderWindow_drawText(window, game->pnj_scene->name, NULL);
-        sfRenderWindow_drawText(window, game->pnj_scene->replique, NULL);
-        sfRenderWindow_display(window);
+        draw_something(window, game);
         event_pnj_scene(window, game);
     }
     if (game->all_pnj[1]->avancement == game->all_pnj[1]->finish - 1) {

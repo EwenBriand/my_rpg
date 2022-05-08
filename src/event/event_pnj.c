@@ -5,8 +5,8 @@
 ** event_pnj
 */
 
-#include "SFML/Graphics.h"
 #include "../../include/my.h"
+#include "SFML/Graphics.h"
 
 void event_pnj_scene(sfRenderWindow *window, game_t *game)
 {
@@ -15,7 +15,7 @@ void event_pnj_scene(sfRenderWindow *window, game_t *game)
     while (sfRenderWindow_pollEvent(window, &event)) {
         if (event.type == sfEvtClosed || sfKeyboard_isKeyPressed(sfKeyEscape))
             game->state = 1;
-        if (event.type == sfEvtKeyReleased && event.key.code == sfKeyEnter) {
+        if (event.type == sfEvtKeyReleased && event.key.code == sfKeySpace) {
             game->state = 0;
         }
     }

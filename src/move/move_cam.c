@@ -6,8 +6,8 @@
 */
 
 #include "../../include/my.h"
-#include "stdlib.h"
 #include "SFML/Graphics.h"
+#include "stdlib.h"
 
 #include "stdio.h"
 
@@ -18,17 +18,17 @@ void change_charter_bis(game_t *game, int type)
         sfTexture_destroy(game->charter->sprite->texture);
         game->charter->sprite->rect = create_rect(0, 100, 50, 50);
         game->charter->sprite->texture = sfTexture_createFromImage(
-                game->charter->sprite->image, game->charter->sprite->rect);
+            game->charter->sprite->image, game->charter->sprite->rect);
         sfSprite_setTexture(game->charter->sprite->sprite,
-                            game->charter->sprite->texture, sfTrue);
+            game->charter->sprite->texture, sfTrue);
     } else if (type == 3) {
         free((sfIntRect *) game->charter->sprite->rect);
         sfTexture_destroy(game->charter->sprite->texture);
         game->charter->sprite->rect = create_rect(0, 150, 50, 50);
         game->charter->sprite->texture = sfTexture_createFromImage(
-                game->charter->sprite->image, game->charter->sprite->rect);
+            game->charter->sprite->image, game->charter->sprite->rect);
         sfSprite_setTexture(game->charter->sprite->sprite,
-                            game->charter->sprite->texture, sfTrue);
+            game->charter->sprite->texture, sfTrue);
     } else
         change_charter_tree(game, type);
 }
