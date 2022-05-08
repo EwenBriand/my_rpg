@@ -1,3 +1,5 @@
+
+
 /*
 ** EPITECH PROJECT, 2022
 ** ewen
@@ -10,6 +12,8 @@
 
 #include <SFML/Audio.h>
 #include <SFML/Graphics.h>
+//#include <SFML/System.h>
+//#include <SFML/Window.h>
 
 typedef struct stat_s {
     int pv;
@@ -19,6 +23,14 @@ typedef struct stat_s {
     int att_ma;
     int def_ma;
 } stat_t;
+
+// type :
+// 0 = equipement on prend en compte stat;
+// 1 = potion (+ 20 PV);
+//  2 = antidote;
+// 3 = objet de quete;
+// 4 = baie;
+// 5 = bois
 
 typedef struct objet_s {
     char *name;
@@ -50,6 +62,11 @@ typedef struct sort_s {
     char *name;
     char *description;
 } sort_t;
+
+// type :
+// 0 = ramener obj;
+// 1 = tuer des bestioles;
+// 2 = autre
 
 typedef struct pnj_s {
     char *name;
@@ -160,24 +177,7 @@ typedef struct fight_s {
     char *string;
 } fight_t;
 
-typedef struct bestiaire_s {
-    char *string;
-    sfText *stat_enemy;
-    sprite_t *enemy1;
-    sprite_t *enemy2;
-    sprite_t *back;
-} bestiaire_t;
-
-typedef struct minimap_s {
-    sprite_t *map1;
-    sprite_t *map2;
-    int which_map;
-} minimap_t;
-
 typedef struct game_s {
-    minimap_t *minimap;
-    bestiaire_t *best;
-    sprite_t *the_end;
     sprite_t *resume_btn;
     sprite_t *quit_btn;
     pnj_t **all_pnj;
