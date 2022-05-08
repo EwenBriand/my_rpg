@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2021
 ** Project Name
 ** File description:
-** strlen
+** my_strlen
 */
 
 #include "my.h"

@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2021
 ** Project Name
 ** File description:
-** strcat
+** my_strcat
 */
 
 #include <stdlib.h>

@@ -56,6 +56,7 @@ SRC	=	src/init_all/init_game.c	\
 		src/destructor/destroy_game.c	\
 		src/destructor/destroy_charter.c	\
 		src/destructor/destroy_fight.c \
+		src/destructor/destroy_bestiaire_minimap.c \
 		src/shop/open_shop.c \
 		src/shop/init_shop.c \
 		src/shop/create_spritebis.c \
