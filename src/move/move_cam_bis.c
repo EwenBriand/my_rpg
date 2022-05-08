@@ -6,8 +6,8 @@
 */
 
 #include "../../include/my.h"
-#include "stdlib.h"
 #include "SFML/Graphics.h"
+#include "stdlib.h"
 
 void change_charter_four(game_t *game, int type)
 {
@@ -16,18 +16,18 @@ void change_charter_four(game_t *game, int type)
         sfTexture_destroy(game->charter->sprite->texture);
         game->charter->sprite->rect = create_rect(50, 100, 50, 50);
         game->charter->sprite->texture = sfTexture_createFromImage(
-                game->charter->sprite->image, game->charter->sprite->rect);
+            game->charter->sprite->image, game->charter->sprite->rect);
         sfSprite_setTexture(game->charter->sprite->sprite,
-                            game->charter->sprite->texture, sfTrue);
+            game->charter->sprite->texture, sfTrue);
     }
     if (type == 7) {
         free((sfIntRect *) game->charter->sprite->rect);
         sfTexture_destroy(game->charter->sprite->texture);
         game->charter->sprite->rect = create_rect(50, 150, 50, 50);
         game->charter->sprite->texture = sfTexture_createFromImage(
-                game->charter->sprite->image, game->charter->sprite->rect);
+            game->charter->sprite->image, game->charter->sprite->rect);
         sfSprite_setTexture(game->charter->sprite->sprite,
-                            game->charter->sprite->texture, sfTrue);
+            game->charter->sprite->texture, sfTrue);
     }
 }
 
@@ -38,17 +38,17 @@ void change_charter_tree(game_t *game, int type)
         sfTexture_destroy(game->charter->sprite->texture);
         game->charter->sprite->rect = create_rect(50, 0, 50, 50);
         game->charter->sprite->texture = sfTexture_createFromImage(
-                game->charter->sprite->image, game->charter->sprite->rect);
+            game->charter->sprite->image, game->charter->sprite->rect);
         sfSprite_setTexture(game->charter->sprite->sprite,
-                            game->charter->sprite->texture, sfTrue);
+            game->charter->sprite->texture, sfTrue);
     } else if (type == 5) {
         free((sfIntRect *) game->charter->sprite->rect);
         sfTexture_destroy(game->charter->sprite->texture);
         game->charter->sprite->rect = create_rect(50, 50, 50, 50);
         game->charter->sprite->texture = sfTexture_createFromImage(
-                game->charter->sprite->image, game->charter->sprite->rect);
+            game->charter->sprite->image, game->charter->sprite->rect);
         sfSprite_setTexture(game->charter->sprite->sprite,
-                            game->charter->sprite->texture, sfTrue);
+            game->charter->sprite->texture, sfTrue);
     } else
         change_charter_four(game, type);
 }
@@ -86,11 +86,11 @@ void move_map_four(int *nb, int *sec, map_t *map, int *old_pos)
         if (nb[1] != 0)
             map->background->rect->left = old_pos[1];
         map->background->texture = sfTexture_createFromImage(
-                map->background->image, map->background->rect);
+            map->background->image, map->background->rect);
         sfSprite_setTexture(
-                map->background->sprite, map->background->texture, sfTrue);
+            map->background->sprite, map->background->texture, sfTrue);
     } else if (nb[0] >= 1 * *sec) {
-        move_map_bis(map,  old_pos, nb[1]);
+        move_map_bis(map, old_pos, nb[1]);
         ++*sec;
     }
 }

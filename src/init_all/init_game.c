@@ -23,6 +23,24 @@ static void creat_map_and_charter(game_t *game)
     free(pos);
 }
 
+static void create_pause_button2(game_t *game)
+{
+    int *pos = malloc(sizeof(int) * 2);
+    int *rect = malloc(sizeof(int) * 4);
+    rect[0] = 0;
+    rect[1] = 0;
+    rect[2] = 200;
+    rect[3] = 200;
+    pos[0] = 1920 / 2 - 170;
+    pos[1] = 1080 / 2 + 100;
+    game->quit_btn = create_sprite("ressources/btn_quit.png", rect, pos);
+    sfSprite_setScale(game->resume_btn->sprite, (sfVector2f){8, 8});
+    sfSprite_setScale(game->quit_btn->sprite, (sfVector2f){8, 8});
+    sfSprite_setScale(game->the_end->sprite, (sfVector2f){6, 4});
+    free(pos);
+    free(rect);
+}
+
 void create_pause_button(game_t *game)
 {
     int *pos = malloc(sizeof(int) * 2);
@@ -39,13 +57,9 @@ void create_pause_button(game_t *game)
     rect[2] = 400;
     rect[3] = 400;
     game->the_end = create_sprite("sprites/end.png", rect, pos);
-    pos[0] = 1920 / 2 - 170;
-    pos[1] = 1080 / 2 + 100;
-    game->quit_btn = create_sprite("ressources/btn_quit.png", rect, pos);
-    sfSprite_setScale(game->resume_btn->sprite, (sfVector2f){8, 8});
-    sfSprite_setScale(game->quit_btn->sprite, (sfVector2f){8, 8});
-    sfSprite_setScale(game->the_end->sprite, (sfVector2f){6, 4});
+    create_pause_button2(game);
     free(pos);
+    free(rect);
 }
 
 static void init_lot_of_things(game_t *game)
@@ -59,6 +73,8 @@ static void init_lot_of_things(game_t *game)
     game->clock = sfClock_create();
     game->shop.clock1.clock = sfClock_create();
     game->shop.clock2.clock = sfClock_create();
+    init_bestiaire(game);
+    init_minimap(game);
 }
 
 game_t *creat_my_game(void)

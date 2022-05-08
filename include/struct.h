@@ -1,3 +1,5 @@
+
+
 /*
 ** EPITECH PROJECT, 2022
 ** ewen
@@ -13,14 +15,6 @@
 //#include <SFML/System.h>
 //#include <SFML/Window.h>
 
-/*
- * xp -> game->perso->xp (int)
- * niv sup xp -> game->perso->xp_supp (int)
- * niv -> game->perso->level (int)
- * xp druide -> game->perso->druide (int)
- * xp bucheron -> game->perso->bucheron (int)
- * credit -> game->perso->credit (int)
- */
 typedef struct stat_s {
     int pv;
     int pv_max;
@@ -184,7 +178,6 @@ typedef struct fight_s {
 } fight_t;
 
 typedef struct game_s {
-    sprite_t *the_end;
     sprite_t *resume_btn;
     sprite_t *quit_btn;
     pnj_t **all_pnj;

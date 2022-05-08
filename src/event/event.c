@@ -79,12 +79,12 @@ void my_event(sfRenderWindow *window, game_t *game)
             move_vertical(game, event);
             move_horizontal(game, event);
             interaction(window, game, event);
-            if (event.key.code == sfKeyF) {
-                game->all_pnj[1]->nb_obj = 5;
-                add_object_in_inv(game, "faux", 1);
-            }
         }
         if (sfKeyboard_isKeyPressed(sfKeyEscape))
             pause_menu(window, game);
+        if (sfKeyboard_isKeyPressed(sfKeyB))
+            open_bestiaire(window, game);
+        if (sfKeyboard_isKeyPressed(sfKeyM))
+            open_minimap(window, game);
     }
 }

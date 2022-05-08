@@ -25,9 +25,11 @@ void change_map(sfRenderWindow *window, game_t *game, int code)
 {
     destroy_map(game->map);
     if (code == 2) {
+        game->minimap->which_map = 1;
         game->mobs = 1;
         create_new_map(game, "maps/cave.png", "map_int/cave.int");
     } else {
+        game->minimap->which_map = 0;
         game->mobs = 0;
         create_new_map(game, "maps/city1.png", "map_int/city1.int");
         game->charter->exep[1] = 0;

@@ -64,7 +64,7 @@ void move_static_charter(game_t *game, sfRenderWindow *window)
             || (game->map->pos[1] == 10 && game->input == 'q')))
         hor_spe_move(game, window);
     else if ((game->map->pos[1] >= -4
-            || (game->map->pos[1] == 0 && game->input == 'd')))
+                 || (game->map->pos[1] == 0 && game->input == 'd')))
         hor_spe_move(game, window);
 
     if ((game->map->pos[0] >= 7
@@ -72,7 +72,7 @@ void move_static_charter(game_t *game, sfRenderWindow *window)
         vert_spe_move(game, window);
 
     else if ((game->map->pos[0] >= -2
-            || (game->map->pos[0] == 0 && game->input == 's')))
+                 || (game->map->pos[0] == 0 && game->input == 's')))
         vert_spe_move(game, window);
 }
 

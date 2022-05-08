@@ -5,9 +5,9 @@
 ** destroy_pnj_scene
 */
 
+#include <SFML/Graphics.h>
 #include "../../include/my.h"
 #include "stdlib.h"
-#include <SFML/Graphics.h>
 
 void destroy_pnj_scene(pnj_scene_t *pnj_scene)
 {

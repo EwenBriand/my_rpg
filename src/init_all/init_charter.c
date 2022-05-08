@@ -5,9 +5,9 @@
 ** init_charter
 */
 
-#include "stdlib.h"
-#include "SFML/Graphics.h"
 #include "../../include/my.h"
+#include "SFML/Graphics.h"
+#include "stdlib.h"
 
 charter_t *create_charter(char *path, int *pos)
 {

@@ -5,8 +5,8 @@
 ** destroy_particule
 */
 
-#include "stdlib.h"
 #include <SFML/Graphics.h>
+#include "stdlib.h"
 
 void destroy_particule(sfVertexArray **particule)
 {

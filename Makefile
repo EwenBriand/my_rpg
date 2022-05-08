@@ -10,15 +10,23 @@ SRC	=	src/init_all/init_game.c	\
 		src/init_all/init_charter.c	\
 		src/init_all/init_rect.c	\
 		src/init_all/init_sprite.c	\
+		src/init_all/init_minimap.c \
 		src/init_all/init_pnjs.c	\
 		src/init_all/init_pnj2.c	\
+		src/init_all/init_fight.c \
 		src/init_all/init_perso.c	\
 		src/init_all/init_object.c	\
 		src/init_all/init_pnj_scene.c	\
+		src/init_all/create_slash.c \
 		src/init_all/init_all_particule.c \
+		src/init_all/init_bestiaire.c \
 		src/init_all/create_stat.c \
 		src/event/event.c	\
 		src/event/event_pnj.c	\
+		src/event/event_the_end.c \
+		src/menu/button.c \
+		src/menu/clickable_btn.c \
+		src/pause_menu/pause_menu.c \
 		src/move/move_charter.c		\
 		src/move/move_cam.c		\
 		src/move/move_cam_bis.c	\
@@ -27,10 +35,12 @@ SRC	=	src/init_all/init_game.c	\
 		src/interaction/all_interaction.c	\
 		src/interaction/pnj1.c	\
 		src/interaction/pnj2.c	\
+		src/interaction/open_chest.c \
 		src/interaction/pnj3.c	\
 		src/interaction/pnj4.c	\
 		src/interaction/pnj5.c	\
 		src/inventaire/add.c	\
+		src/inventaire/open_inv.c \
 		src/inventaire/del.c	\
 		src/inventaire/is_in.c	\
 		src/draw/draw_map.c	\
@@ -45,32 +55,26 @@ SRC	=	src/init_all/init_game.c	\
 		src/destructor/destroy_particule.c	\
 		src/destructor/destroy_game.c	\
 		src/destructor/destroy_charter.c	\
+		src/destructor/destroy_fight.c \
 		src/shop/open_shop.c \
 		src/shop/init_shop.c \
 		src/shop/create_spritebis.c \
 		src/shop/display.c \
-		src/start_game.c \
-		src/menu/button.c \
-		src/menu/clickable_btn.c \
-		src/pause_menu/pause_menu.c \
-		src/my_big_effect.c \
 		src/fight/my_fight.c \
 		src/fight/draw_fight.c \
 		src/fight/mob_turn.c \
 		src/fight/player_turn.c \
 		src/fight/player_event.c \
 		src/fight/print_turn_result.c \
-		src/init_all/init_fight.c \
 		src/fight/event_result.c \
 		src/fight/fight_slash.c \
-		src/init_all/create_slash.c \
 		src/fight/fight_smoke.c \
 		src/fight/dmg_deal.c \
-		src/destructor/destroy_fight.c \
-		src/interaction/open_chest.c \
-		src/inventaire/open_inv.c \
-		src/event/event_the_end.c \
+		src/start_game.c \
+		src/my_big_effect.c \
 		src/the_beg/tel_the_story.c \
+		src/bestiaire/bestiaire.c \
+		src/minimap/minimap.c \
 
 OBJ	=	$(SRC:.c=.o)
 

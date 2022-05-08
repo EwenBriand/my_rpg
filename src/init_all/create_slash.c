@@ -15,7 +15,7 @@ void create_slash(game_t *game)
         for (int i = 0; i < 50; ++i) {
             sfVertexArray_append(game->fight->slash,
                 (sfVertex){.position = (sfVector2f){1920 / 2 + i - j + 500,
-                                1080 / 2 + i + 50},
+                               1080 / 2 + i + 50},
                     .color = (sfColor){180, 50, 61, 255},
                     .texCoords = (sfVector2f){
                         1920 / 2 + i - j + 500, 1080 / 2 + 50 + i}});

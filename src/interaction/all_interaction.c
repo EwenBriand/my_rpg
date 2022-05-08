@@ -16,6 +16,7 @@ static void make_buisson(game_t *game)
     ++game->perso->druide;
     game->map->map[game->charter->pos[0]][game->charter->pos[1]] = 3;
     add_object_in_inv(game, "baie", nb_baies);
+    game->perso->credits = 1000;
 }
 
 static void make_arbre(game_t *game)
@@ -25,6 +26,7 @@ static void make_arbre(game_t *game)
     ++game->perso->bucheron;
     game->map->map[game->charter->pos[0]][game->charter->pos[1]] = 3;
     add_object_in_inv(game, "bois", nb_bois);
+    game->perso->credits = 1000;
 }
 
 static void my_chest(sfRenderWindow *window, game_t *game, int code)
@@ -35,6 +37,7 @@ static void my_chest(sfRenderWindow *window, game_t *game, int code)
 
 void make_interaction(sfRenderWindow *window, game_t *game, int code)
 {
+    game->perso->credits = 1000;
     if (code == 12) {
         sfClock_restart(game->shop.clock1.clock);
         game->state = 666;

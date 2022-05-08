@@ -5,8 +5,8 @@
 ** init_rect
 */
 
-#include "stdlib.h"
 #include "SFML/Graphics.h"
+#include "stdlib.h"
 
 sfIntRect *create_rect(int top, int left, int width, int height)
 {

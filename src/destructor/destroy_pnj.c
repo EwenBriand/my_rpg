@@ -5,8 +5,8 @@
 ** destroy_pnj
 */
 
-#include "stdlib.h"
 #include "../../include/my.h"
+#include "stdlib.h"
 
 void destroy_pnj(pnj_t **pnj)
 {

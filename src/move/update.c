@@ -70,7 +70,7 @@ void move_charter_tree(float *nb, int *sec, game_t *game, sfVector2f *pos)
 {
     if (nb[0] < 1 * *sec) {
         sfSprite_setPosition(
-                game->charter->sprite->sprite, (sfVector2f){pos->x, pos->y});
+            game->charter->sprite->sprite, (sfVector2f){pos->x, pos->y});
     } else if (nb[0] >= 1 * *sec) {
         mover_charter_bis(pos, nb[1], nb[2]);
         ++*sec;

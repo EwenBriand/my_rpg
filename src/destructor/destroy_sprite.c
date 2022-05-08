@@ -6,8 +6,8 @@
 */
 
 #include <SFML/Graphics.h>
-#include "stdlib.h"
 #include "../../include/my.h"
+#include "stdlib.h"
 
 void destroy_sprite(sprite_t *sprite)
 {

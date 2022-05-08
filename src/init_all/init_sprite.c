@@ -5,9 +5,9 @@
 ** init_sprite
 */
 
-#include "stdlib.h"
-#include "SFML/Graphics.h"
 #include "../../include/my.h"
+#include "SFML/Graphics.h"
+#include "stdlib.h"
 
 sprite_t *create_sprite(char *path, int *p, int *position)
 {

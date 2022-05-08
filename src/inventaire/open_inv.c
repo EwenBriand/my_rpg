@@ -50,4 +50,12 @@ void open_inventory(sfRenderWindow *window, game_t *game)
     sfText_setPosition(text, place);
     sfRenderWindow_drawText(window, text, NULL);
     check_close(window, game);
+    //printf("%i\n", game->perso->credits);
+    if (game->perso->credits == 1000) {
+        printf("%i\n", game->perso->inv->nb_obj);
+        for (int i = 0; game->perso->inv->inv[i] != NULL; i++) {
+            printf("%s", game->perso->inv->inv[i]->name);
+        }
+        game->perso->credits = 1010;
+    }
 }
