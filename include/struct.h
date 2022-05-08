@@ -1,5 +1,3 @@
-
-
 /*
 ** EPITECH PROJECT, 2022
 ** ewen
@@ -12,8 +10,6 @@
 
 #include <SFML/Audio.h>
 #include <SFML/Graphics.h>
-//#include <SFML/System.h>
-//#include <SFML/Window.h>
 
 typedef struct stat_s {
     int pv;
@@ -23,14 +19,6 @@ typedef struct stat_s {
     int att_ma;
     int def_ma;
 } stat_t;
-
-// type :
-// 0 = equipement on prend en compte stat;
-// 1 = potion (+ 20 PV);
-//  2 = antidote;
-// 3 = objet de quete;
-// 4 = baie;
-// 5 = bois
 
 typedef struct objet_s {
     char *name;
@@ -62,11 +50,6 @@ typedef struct sort_s {
     char *name;
     char *description;
 } sort_t;
-
-// type :
-// 0 = ramener obj;
-// 1 = tuer des bestioles;
-// 2 = autre
 
 typedef struct pnj_s {
     char *name;

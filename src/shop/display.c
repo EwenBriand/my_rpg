@@ -12,19 +12,15 @@ static void auto_equiped_sec(game_t *game, shop_t *shop, int nbr)
 {
     if (my_strcmp(shop->items_shop[nbr].name, "epaulettes de linitier") == 0) {
         game->perso->equip->shoulder = game->all_objets[3];
-        del_object_in_inv(game, shop->items_shop[nbr].name, 1);
     }
     if (my_strcmp(shop->items_shop[nbr].name, "jambiere de linitier") == 0) {
         game->perso->equip->leg = game->all_objets[8];
-        del_object_in_inv(game, shop->items_shop[nbr].name, 1);
     }
     if (my_strcmp(shop->items_shop[nbr].name, "bottes de linitier") == 0) {
         game->perso->equip->foot = game->all_objets[7];
-        del_object_in_inv(game, shop->items_shop[nbr].name, 1);
     }
     if (my_strcmp(shop->items_shop[nbr].name, "collier de linitier") == 0) {
         game->perso->equip->neck = game->all_objets[10];
-        del_object_in_inv(game, shop->items_shop[nbr].name, 1);
     }
 }
 
@@ -32,19 +28,15 @@ static void auto_equiped(game_t *game, shop_t *shop, int nbr)
 {
     if (my_strcmp(shop->items_shop[nbr].name, "epee de linitier") == 0) {
         game->perso->equip->weapon = game->all_objets[3];
-        del_object_in_inv(game, shop->items_shop[nbr].name, 1);
     }
     if (my_strcmp(shop->items_shop[nbr].name, "casque de linitier") == 0) {
         game->perso->equip->head = game->all_objets[5];
-        del_object_in_inv(game, shop->items_shop[nbr].name, 1);
     }
     if (my_strcmp(shop->items_shop[nbr].name, "armure de linitier") == 0) {
         game->perso->equip->body = game->all_objets[4];
-        del_object_in_inv(game, shop->items_shop[nbr].name, 1);
     }
     if (my_strcmp(shop->items_shop[nbr].name, "gants de linitier") == 0) {
         game->perso->equip->gauntlet = game->all_objets[6];
-        del_object_in_inv(game, shop->items_shop[nbr].name, 1);
     }
     auto_equiped_sec(game, shop, nbr);
 }
