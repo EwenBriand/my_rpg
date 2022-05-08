@@ -51,7 +51,7 @@ void open_window(window_t *var_wind)
     var_wind->window = sfRenderWindow_create(
         var_wind->vid_mod, "My RPG", sfDefaultStyle, NULL);
     sfTexture *texture =
-        sfTexture_createFromFile("ressources/plaine.jpg", NULL);
+        sfTexture_createFromFile("ressources/oasis.png", NULL);
     sfSprite *sprite = sfSprite_create();
     sfVector2f my_pos = {0.f, 0.f};
     sfVector2f scale = {1.7, 1.7};
