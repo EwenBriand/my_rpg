@@ -177,7 +177,22 @@ typedef struct fight_s {
     char *string;
 } fight_t;
 
+typedef struct bestiaire_s {
+    char *string;
+    sfText *stat_enemy;
+    sprite_t *enemy1;
+    sprite_t *enemy2;
+    sprite_t *back;
+} bestiaire_t;
+
+typedef struct minimap_s {
+    sprite_t *map1;
+    sprite_t *map2;
+    int which_map;
+} minimap_t;
+
 typedef struct game_s {
+    sprite_t *the_end;
     sprite_t *resume_btn;
     sprite_t *quit_btn;
     pnj_t **all_pnj;
@@ -194,6 +209,8 @@ typedef struct game_s {
     sfMusic *quest_complete_sound;
     sfMusic *fireworks;
     sfVertexArray **particule_array;
+    minimap_t *minimap;
+    bestiaire_t *best;
     int state;
     int input;
     int nb_fight;

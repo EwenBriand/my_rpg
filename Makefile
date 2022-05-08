@@ -103,9 +103,9 @@ clean:
 	rm -rf *.o
 
 fclean: clean
-	rm $(NAME)
+	rm -rf $(NAME)
 	rm -rf *.a
-	rm $(OBJ)
+	rm -rf $(OBJ)
 	$(MAKE) -C $(PLACE) fclean
 
 re: fclean makelib all
