@@ -43,6 +43,7 @@ SRC	=	src/init_all/init_game.c	\
 		src/inventaire/open_inv.c \
 		src/inventaire/del.c	\
 		src/inventaire/is_in.c	\
+		src/inventaire/util_inv.c \
 		src/draw/draw_map.c	\
 		src/level_up.c	\
 		src/change_map/change_map.c	\

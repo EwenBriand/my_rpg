@@ -162,5 +162,9 @@ void open_minimap(sfRenderWindow *window, game_t *game);
 void open_bestiaire(sfRenderWindow *window, game_t *game);
 
 void open_inventory(sfRenderWindow *window, game_t *game);
+void create_sprite_inv(game_t *game);
+void display2(sfSprite *sprite, int *nbr, game_t *game, sfRenderWindow *window);
+void display1(sfSprite *sprite, sfRenderWindow *window, int *nbr, sfVector2f *place1);
+void display_inv_tree(int display, objet_t *objet, game_t *game, sfSprite *sprite);
 
 #endif

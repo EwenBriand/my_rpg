@@ -199,6 +199,8 @@ typedef struct game_s {
     int nb_fight;
     int mobs;
     int chest;
+    sfVector2f place_inv;
+    sfText *text_inv;
 } game_t;
 
 #endif
